@@ -55,7 +55,7 @@ class MatrixRain {
 // Theme System
 class ThemeManager {
     constructor() {
-        this.currentTheme = localStorage.getItem('theme') || 'dark';
+        this.currentTheme = localStorage.getItem('haku-theme') || 'dark';
         this.themes = ['dark', 'light', 'matrix', 'retro', 'sunset'];
         this.init();
     }
@@ -76,14 +76,23 @@ class ThemeManager {
     }
     
     applyTheme(theme) {
-        document.body.className = theme === 'dark' ? '' : `${theme}-theme`;
+        // Remove all theme classes
+        document.body.classList.remove('light-theme', 'matrix-theme', 'retro-theme', 'sunset-theme');
+        
+        // Apply new theme
+        if (theme !== 'dark') {
+            document.body.classList.add(`${theme}-theme`);
+        }
+        
         this.currentTheme = theme;
-        localStorage.setItem('theme', theme);
+        localStorage.setItem('haku-theme', theme);
         
         // Update active button
         document.querySelectorAll('.theme-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.theme === theme);
         });
+        
+        console.log(`Theme changed to: ${theme}`);
     }
     
     playSound(type) {
