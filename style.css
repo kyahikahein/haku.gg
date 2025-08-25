@@ -190,20 +190,20 @@ body.light-theme {
   color: #111;
 }
 
+/* Light Theme Links */
 body.light-theme a,
 body.light-theme h1 a,
+body.light-theme .projects ul li a,
+body.light-theme .blog ul li a,
 body.light-theme .theme-switcher span {
-  color: #0077cc;
+  color: #0077cc; /* same color for all links */
 }
 
-body.light-theme .contact-bar {
-  background-color: #ddd;
+body.light-theme a:hover,
+body.light-theme h1 a:hover {
+  border-color: #005fa3; /* consistent hover */
 }
 
-body.light-theme .contact-bar a {
-  color: #0077cc;
-  border-bottom: 2px solid #0077cc;
-}
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -212,3 +212,4 @@ body.light-theme .contact-bar a {
     margin: 20px auto;
   }
 }
+
