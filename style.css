@@ -154,6 +154,65 @@ a:hover {
   color: #39fffc;
 }
 
+/* Skills Section */
+.skills {
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.skills h2 {
+  color: #00d1ff;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  text-transform: lowercase;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-left: 50px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background-color: #1a1a1a;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.skill-item:hover {
+  background-color: #2a2a2a;
+  transform: translateY(-2px);
+}
+
+.skill-item img {
+  width: 14px;
+  height: 14px;
+}
+
+.skill-item span {
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+/* Light theme skills */
+body.light-theme .skill-item {
+  background-color: #e0e0e0;
+}
+
+body.light-theme .skill-item:hover {
+  background-color: #d0d0d0;
+}
+
+body.light-theme .skill-item span {
+  color: #111;
+}
+
 /* Projects & Blog Sections */
 .projects, .blog {
   margin-bottom: 40px;
