@@ -218,6 +218,10 @@ body.light-theme .skill-item span {
   color: #111;
 }
 
+body.light-theme .skills h2 {
+  color: #0077cc;
+}
+
 /* Projects & Blog Sections */
 .projects, .blog {
   margin-bottom: 40px;
