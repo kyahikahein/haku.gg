@@ -8,21 +8,19 @@
 <style>
 body {
   background-color: #000;
-  color: #0a3c5f;
+  color: #d0e7ff;
   font-family: 'Source Code Pro', monospace;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
 }
-
 .main-container {
   width: 700px;
   margin-top: 20px;
   position: relative;
   line-height: 1.8;
 }
-
 .banner {
   width: 100%;
   height: 150px;
@@ -30,7 +28,6 @@ body {
   position: relative;
   margin-bottom: 80px;
 }
-
 .pfp {
   width: 120px;
   height: 120px;
@@ -40,98 +37,81 @@ body {
   top: 60px;
   left: 20px;
 }
-
 h1 {
   margin-top: -40px;
   font-size: 2.2rem;
   text-transform: lowercase;
   line-height: 1.2;
 }
-
 h1 a {
-  color: #0a3c5f;
+  color: #d0e7ff;
   text-decoration: none;
-  border-bottom: 2px solid #0a3c5f;
+  border-bottom: 2px solid #d0e7ff;
   padding-bottom: 2px;
   transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
   display: inline-block;
 }
-
 h1 a:hover {
   transform: scale(1.1);
   border-color: #39FFFC;
 }
-
-h2 {
-  font-size: 1.5rem;
-  margin-top: 35px;
-  margin-bottom: 20px;
-}
-
 ul {
   list-style-type: disc;
   list-style-position: outside;
   margin-left: 50px;
   padding-left: 0;
 }
-
 ul li::marker {
   content: "· ";
   font-size: 20px;
-  color: #0a3c5f;
+  color: #d0e7ff;
 }
-
 ul li {
   margin-bottom: 15px;
   font-size: 1rem;
 }
-
 a {
-  color: #0a3c5f;
+  color: #d0e7ff;
   text-decoration: none;
-  border-bottom: 2px solid #0a3c5f;
+  border-bottom: 2px solid #d0e7ff;
   padding-bottom: 2px;
   transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
   display: inline-block;
 }
-
 a:hover {
   transform: scale(1.1);
   border-color: #39FFFC;
 }
-
 .quote-rotator {
   margin: 30px 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: #000;
   padding: 10px 15px;
   border-radius: 8px;
 }
-
 .quote-rotator p {
-  color: #0a3c5f;
+  color: #a0d1ff;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 0;
+  text-align: center;
   flex: 1;
 }
-
 .quote-rotator button {
   background: transparent;
-  color: #0a3c5f;
+  color: #a0d1ff;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s;
+  margin-left: 10px;
 }
-
 .quote-rotator button:hover {
   transform: scale(1.2);
   color: #39FFFC;
 }
-
 .contact-bar {
   position: fixed;
   bottom: 0;
@@ -144,16 +124,14 @@ a:hover {
   gap: 40px;
   z-index: 1000;
 }
-
 .contact-bar a {
-  color: #0a3c5f;
+  color: #d0e7ff;
   text-decoration: none;
-  border-bottom: 2px solid #0a3c5f;
+  border-bottom: 2px solid #d0e7ff;
   padding-bottom: 2px;
   transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
   display: inline-block;
 }
-
 .contact-bar a:hover {
   transform: scale(1.1);
   border-color: #39FFFC;
@@ -165,18 +143,15 @@ a:hover {
   <div class="banner">
     <img src="https://pbs.twimg.com/profile_images/1956422441569312770/OJe7wx2f_400x400.jpg" alt="profile picture" class="pfp">
   </div>
-
   <h1>hi, i'm <a href="index.html">haku</a></h1>
   <ul>
     <li>i am a second year student, studying iot and electronics</li>
     <li>preparing for iiith leee ecd. love doing maths.</li>
   </ul>
-
   <section class="quote-rotator">
     <p id="quote"></p>
     <button id="nextQuoteBtn">→</button>
   </section>
-
   <section class="projects">
     <h2>projects</h2>
     <ul>
@@ -185,7 +160,6 @@ a:hover {
       <li><a href="#">personal website development</a> : building my website</li>
     </ul>
   </section>
-
   <section class="blog">
     <h2>blog</h2>
     <ul>
@@ -195,7 +169,6 @@ a:hover {
     </ul>
   </section>
 </div>
-
 <div class="contact-bar">
   <a href="mailto:dhanrazx@proton.me">email</a>
   <a href="https://github.com/kyahikahein" target="_blank">github</a>
@@ -203,31 +176,11 @@ a:hover {
   <a href="https://open.spotify.com/user/1mh3ivy5cj3omoc3jhnkoylgf" target="_blank">spotify</a>
 
 </div>
-
 <script>
-const rdr2Quotes = [
-"Arthur Morgan: 'We can't change what's done, we can only move on.'",
-"Dutch van der Linde: 'We are more ghosts than people.'",
-"Hosea Matthews: 'I wish I'd acquired wisdom at less of a price.'",
-"Micah Bell: 'I don't want to kill you, John.'",
-"John Marston: 'Arthur saved my life, more than once.'"
-];
-
-const aotQuotes = [
-"Eren Yeager: 'If you win, you live. If you lose, you die.'",
-"Mikasa Ackerman: 'In a world full of darkness, you are my only light.'",
-"Levi Ackerman: 'Sometimes you must become a monster to protect those you love.'",
-"Armin Arlert: 'It doesn't matter how hard the past was, you can always start over.'",
-"Eren Yeager: 'We’re born free. All of us, free.'"
-];
-
-const vinlandQuotes = [
-"Thors: 'You have no enemies. No one has enemies.'",
-"Askeladd: 'A man, slave to gold, holds a whip...'",
-"Thorfinn: 'I have no enemies.'",
-"Canute: 'Why is there no love in the hearts of men?'",
-"Thors: 'The future is often forged in the crucible of uncertainty.'"
-];
+const rdr2Quotes = ["Arthur Morgan: 'We can't change what's done, we can only move on.'","Dutch van der Linde: 'We are more ghosts than people.'","Hosea Matthews: 'I wish I'd acquired wisdom at less of a price.'","Micah Bell: 'I don't want to kill you, John.'","John Marston: 'Arthur saved my life, more than once.'"];
+const aotQuotes = ["Eren Yeager: 'If you win, you live. If you lose, you die.'","Mikasa Ackerman: 'In a world full of darkness, you are my only light.'","Levi Ackerman: 'Sometimes you must become a monster to protect those you love.'","Armin Arlert: 'It doesn't matter how hard the past was, you can always start over.'","Eren Yeager: 'We’re born free. All of us, free.'"];
+const vinlandQuotes = ["Thors: 'You have no enemies. No one has enemies.'","Askeladd: 'A man, slave to gold, holds a whip...'","Thorfinn: 'I have no enemies.'","Canute: 'Why is there no love in the hearts of men?'","Thors: 'The future is often forged in the crucible of uncertainty.'"];
+const unknownQuotes = ["Insert your custom quotes here...","Another placeholder quote...","Yet another example quote..."];
 
 let index = 0;
 let category = 0;
@@ -237,17 +190,27 @@ const nextBtn = document.getElementById('nextQuoteBtn');
 function showQuote() {
   if(category === 0) quoteEl.textContent = rdr2Quotes[index % rdr2Quotes.length];
   else if(category === 1) quoteEl.textContent = aotQuotes[index % aotQuotes.length];
-  else quoteEl.textContent = vinlandQuotes[index % vinlandQuotes.length];
+  else if(category === 2) quoteEl.textContent = vinlandQuotes[index % vinlandQuotes.length];
+  else quoteEl.textContent = unknownQuotes[index % unknownQuotes.length];
 }
 
 showQuote();
-
 nextBtn.addEventListener('click', () => {
   index++;
   if(category === 0 && index >= rdr2Quotes.length) {category=1; index=0;}
   else if(category === 1 && index >= aotQuotes.length) {category=2; index=0;}
-  else if(category === 2 && index >= vinlandQuotes.length) {category=0; index=0;}
+  else if(category === 2 && index >= vinlandQuotes.length) {category=3; index=0;}
+  else if(category === 3 && index >= unknownQuotes.length) {category=0; index=0;}
   showQuote();
+});
+
+const clickSound = new Audio('https://www.soundjay.com/button/sounds/button-16.mp3');
+const allLinks = document.querySelectorAll('a');
+allLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+  });
 });
 </script>
 </body>
