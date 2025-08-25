@@ -1,4 +1,8 @@
 /* General Body */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   transition: background-color 0.3s, color 0.3s;
+  padding-bottom: 80px; /* Space for footer */
 }
 
 /* Main Container */
@@ -305,10 +310,190 @@ body.light-theme ul li::marker {
   color: #111;
 }
 
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.main-container > * {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.main-container > *:nth-child(1) { animation-delay: 0.1s; }
+.main-container > *:nth-child(2) { animation-delay: 0.2s; }
+.main-container > *:nth-child(3) { animation-delay: 0.3s; }
+.main-container > *:nth-child(4) { animation-delay: 0.4s; }
+.main-container > *:nth-child(5) { animation-delay: 0.5s; }
+.main-container > *:nth-child(6) { animation-delay: 0.6s; }
+.main-container > *:nth-child(7) { animation-delay: 0.7s; }
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.8rem;
+  color: #666;
+  background-color: transparent;
+  z-index: 999;
+}
+
+body.light-theme .footer {
+  color: #888;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .main-container {
     width: 90%;
     margin: 20px auto;
+  }
+  
+  .pfp {
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    left: 15px;
+  }
+  
+  .banner {
+    height: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    width: 95%;
+    margin: 15px auto;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .pfp {
+    width: 80px;
+    height: 80px;
+    top: 40px;
+    left: 10px;
+  }
+  
+  .banner {
+    height: 110px;
+  }
+  
+  ul {
+    margin-left: 30px;
+  }
+  
+  .skills-grid {
+    margin-left: 30px;
+    gap: 10px;
+  }
+  
+  .skill-item {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+  
+  .skill-item span {
+    font-size: 0.75rem;
+  }
+  
+  .contact-bar {
+    gap: 20px;
+    padding: 8px 0;
+  }
+  
+  .contact-bar a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    width: 95%;
+    margin: 10px auto;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .pfp {
+    width: 70px;
+    height: 70px;
+    top: 30px;
+    left: 8px;
+  }
+  
+  .banner {
+    height: 90px;
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    margin-left: 20px;
+  }
+  
+  ul li {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  
+  .skills-grid {
+    margin-left: 20px;
+    gap: 8px;
+  }
+  
+  .skill-item {
+    padding: 3px 6px;
+    gap: 3px;
+  }
+  
+  .skill-item img {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .skill-item span {
+    font-size: 0.7rem;
+  }
+  
+  .contact-bar {
+    gap: 15px;
+    padding: 6px 0;
+    flex-wrap: wrap;
+  }
+  
+  .contact-bar a {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+  
+  .theme-switcher {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+  
+  .theme-switcher span {
+    font-size: 0.8rem;
   }
 }
