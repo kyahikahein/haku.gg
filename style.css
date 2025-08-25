@@ -126,6 +126,7 @@ ul {
   padding-left: 0;
 }
 
+
 ul li::marker {
   content: "· ";
   font-size: 20px;
@@ -212,4 +213,5 @@ body.light-theme h1 a:hover {
     margin: 20px auto;
   }
 }
+
 
