@@ -4,15 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>haku's site</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #000;
       color: #fff;
       font-family: 'Source Code Pro', monospace;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .main-container {
+      width: 700px;
+      margin-top: 20px;
+    }
+    .banner {
+      width: 100%;
+      height: 150px;
+      background: url('https://i.pinimg.com/originals/19/5b/be/195bbe7a9f93f6c817d928dafb367ea4.gif') center/cover no-repeat;
+      position: relative;
+      margin-bottom: 60px;
+    }
+    .pfp {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      top: 100px;
+      left: 20px;
+      border: 3px solid #fff;
+    }
+    h1 {
+      margin-top: -50px;
+      font-size: 2rem;
       text-transform: lowercase;
-      margin: 20px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style-type: disc;
+      list-style-position: outside;
+      margin-left: 20px;
+      padding-left: 0;
+    }
+    ul li::marker {
+      content: "· ";
+      font-size: 18px;
     }
     a {
       color: #fff;
@@ -21,33 +62,30 @@
     a:hover {
       text-decoration: underline;
     }
-    h1, h2, p, ul {
-      text-align: left;
-    }
-    ul {
-      list-style-type: disc;
-      list-style-position: outside;
-      margin-left: 20px;
-    }
-    ul li::marker {
-      content: "· ";
-      font-size: 18px;
+    .contact ul {
+      display: flex;
+      gap: 20px;
+      padding-left: 0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="main-container">
+    <div class="banner">
+      <img src="https://pbs.twimg.com/profile_images/1956422441569312770/OJe7wx2f_400x400.jpg" alt="profile picture" class="pfp">
+    </div>
+
     <h1>hi, i'm haku</h1>
-      <h2>
-        <li>i am a second year student, studying of iot and electronics</li>
-        <li> preparing for iiith leee ecd. i'm not so good at it but love doin maths.</li>
-      </h2>
+    <ul>
+      <li>i am a second year student, studying iot and electronics</li>
+      <li>preparing for iiith leee ecd. i'm not so good at it but love doin maths.</li>
+    </ul>
 
     <section class="experience">
       <h2>experience</h2>
       <ul>
         <li>python (beginner, intermediate projects ongoing)</li>
-        <li>electronics, digital computer organization, and math </li>
+        <li>electronics, digital computer organization, and math</li>
         <li>gym training (from scratch, tracking progress)</li>
       </ul>
     </section>
@@ -81,4 +119,3 @@
   </div>
 </body>
 </html>
-
