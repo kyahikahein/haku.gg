@@ -1,0 +1,71 @@
+/* Fonts */
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background: #0A0A0A;
+  color: #FFFFFF;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #111111;
+  justify-content: space-between;
+}
+
+header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #8C52FF;
+  font-weight: bold;
+}
+
+.pfp {
+  width: 60px;
+  border-radius: 50%;
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #8C52FF;
+}
+
+.gif {
+  width: 200px;
+  display: block;
+  margin-top: 20px;
+}
+
+.about-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #8C52FF;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111111;
+  margin-top: 50px;
+}
