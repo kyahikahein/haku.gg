@@ -154,9 +154,30 @@ a:hover {
   color: #39fffc;
 }
 
-/* Projects & Blog Headings */
+/* Projects & Blog Sections */
+.projects, .blog {
+  margin-bottom: 40px;
+  padding: 0;
+}
+
 .projects h2, .blog h2 {
   color: #00d1ff;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  text-transform: lowercase;
+}
+
+.projects ul, .blog ul {
+  margin-left: 50px;
+  padding-left: 0;
+  list-style-position: outside;
+}
+
+.projects li, .blog li {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* Contact Bar */
@@ -194,15 +215,15 @@ body.light-theme {
   color: #111;
 }
 
+/* All links in light theme */
 body.light-theme a,
 body.light-theme h1 a,
-body.light-theme .theme-switcher span,
-body.light-theme .projects h2,
-body.light-theme .blog h2 {
+body.light-theme .contact-bar a {
   color: #0077cc;
   border-color: #0077cc;
 }
 
+/* All link hovers in light theme */
 body.light-theme a:hover,
 body.light-theme h1 a:hover,
 body.light-theme .contact-bar a:hover {
@@ -210,13 +231,15 @@ body.light-theme .contact-bar a:hover {
   border-color: #0099ff;
 }
 
-body.light-theme .contact-bar {
-  background-color: #ddd;
+/* Theme switcher text and headings */
+body.light-theme .theme-switcher span,
+body.light-theme .projects h2,
+body.light-theme .blog h2 {
+  color: #0077cc;
 }
 
-body.light-theme .contact-bar a {
-  color: #0077cc;
-  border-bottom: 2px solid #0077cc;
+body.light-theme .contact-bar {
+  background-color: #ddd;
 }
 
 body.light-theme ul li::marker {
