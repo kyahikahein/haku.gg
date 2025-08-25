@@ -6,272 +6,249 @@
 <title>haku's site</title>
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 <style>
-  /* General Body */
-  body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Source Code Pro', monospace;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
+body {
+  background-color: #000;
+  color: #0a3c5f;
+  font-family: 'Source Code Pro', monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
 
-  /* Main container */
-  .main-container {
-    width: 700px;
-    margin-top: 20px;
-    position: relative;
-    line-height: 1.8;
-  }
+.main-container {
+  width: 700px;
+  margin-top: 20px;
+  position: relative;
+  line-height: 1.8;
+}
 
-  /* Banner */
-  .banner {
-    width: 100%;
-    height: 150px;
-    background: url('https://i.pinimg.com/originals/19/5b/be/195bbe7a9f93f6c817d928dafb367ea4.gif') center/cover no-repeat;
-    position: relative;
-    margin-bottom: 80px;
-  }
+.banner {
+  width: 100%;
+  height: 150px;
+  background: url('https://i.pinimg.com/originals/19/5b/be/195bbe7a9f93f6c817d928dafb367ea4.gif') center/cover no-repeat;
+  position: relative;
+  margin-bottom: 80px;
+}
 
-  /* Profile picture */
-  .pfp {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 15px;
-    position: absolute;
-    top: 60px;
-    left: 20px;
-  }
+.pfp {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 15px;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+}
 
-  /* Headings */
-  h1 {
-    margin-top: -40px;
-    font-size: 2.2rem;
-    text-transform: lowercase;
-    line-height: 1.2;
-  }
+h1 {
+  margin-top: -40px;
+  font-size: 2.2rem;
+  text-transform: lowercase;
+  line-height: 1.2;
+}
 
-  h1 a {
-    color: #39FFFC;
-    text-decoration: none;
-    border-bottom: 2px solid #39FFFC;
-    padding-bottom: 2px;
-    transition: border-color 0.3s, color 0.3s;
-    cursor: pointer;
-  }
+h1 a {
+  color: #0a3c5f;
+  text-decoration: none;
+  border-bottom: 2px solid #0a3c5f;
+  padding-bottom: 2px;
+  transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
+  display: inline-block;
+}
 
-  h1 a:hover {
-    border-color: #0CF;
-  }
+h1 a:hover {
+  transform: scale(1.1);
+  border-color: #39FFFC;
+}
 
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 35px;
-    margin-bottom: 20px;
-  }
+h2 {
+  font-size: 1.5rem;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
 
-  /* Lists */
-  ul {
-    list-style-type: disc;
-    list-style-position: outside;
-    margin-left: 50px;
-    padding-left: 0;
-  }
+ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 50px;
+  padding-left: 0;
+}
 
-  ul li::marker {
-    content: "· ";
-    font-size: 20px;
-    color: #39FFFC;
-  }
+ul li::marker {
+  content: "· ";
+  font-size: 20px;
+  color: #0a3c5f;
+}
 
-  ul li {
-    margin-bottom: 15px;
-    font-size: 1rem;
-  }
+ul li {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
 
-  /* Links */
-  a {
-    color: #39FFFC;
-    text-decoration: none;
-    border-bottom: 2px solid #39FFFC;
-    padding-bottom: 2px;
-    transition: border-color 0.3s, color 0.3s;
-  }
+a {
+  color: #0a3c5f;
+  text-decoration: none;
+  border-bottom: 2px solid #0a3c5f;
+  padding-bottom: 2px;
+  transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
+  display: inline-block;
+}
 
-  a:hover {
-    border-color: #0CF;
-  }
+a:hover {
+  transform: scale(1.1);
+  border-color: #39FFFC;
+}
 
-  /* Quote Rotator */
-  .quote-rotator {
-    margin: 30px 0;
-    text-align: center;
-  }
+.quote-rotator {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
 
-  .quote-rotator p {
-    color: #39FFFC;
-    font-style: italic;
-    margin-bottom: 10px;
-    min-height: 40px;
-  }
+.quote-rotator p {
+  color: #0a3c5f;
+  font-style: italic;
+  font-size: 1rem;
+  margin: 0;
+  flex: 1;
+}
 
-  .quote-rotator button {
-    background: #111;
-    color: #39FFFC;
-    border: 1px solid #39FFFC;
-    padding: 5px 12px;
-    cursor: pointer;
-    margin-top: 5px;
-  }
+.quote-rotator button {
+  background: transparent;
+  color: #0a3c5f;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s;
+}
 
-  .quote-rotator button:hover {
-    background: #222;
-  }
+.quote-rotator button:hover {
+  transform: scale(1.2);
+  color: #39FFFC;
+}
 
-  /* Contact Bar */
-  .contact-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #111;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    z-index: 1000;
-  }
+.contact-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 1000;
+}
+
+.contact-bar a {
+  color: #0a3c5f;
+  text-decoration: none;
+  border-bottom: 2px solid #0a3c5f;
+  padding-bottom: 2px;
+  transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+.contact-bar a:hover {
+  transform: scale(1.1);
+  border-color: #39FFFC;
+}
 </style>
 </head>
 <body>
-  <div class="main-container">
-    <!-- Banner and Profile Picture -->
-    <div class="banner">
-      <img src="https://pbs.twimg.com/profile_images/1956422441569312770/OJe7wx2f_400x400.jpg" alt="profile picture" class="pfp">
-    </div>
+<div class="main-container">
+  <div class="banner">
+    <img src="https://pbs.twimg.com/profile_images/1956422441569312770/OJe7wx2f_400x400.jpg" alt="profile picture" class="pfp">
+  </div>
 
-    <!-- Heading -->
-    <h1>hi, i'm <a href="index.html">haku</a></h1>
+  <h1>hi, i'm <a href="index.html">haku</a></h1>
+  <ul>
+    <li>i am a second year student, studying iot and electronics</li>
+    <li>preparing for iiith leee ecd. love doing maths.</li>
+  </ul>
 
-    <!-- About Me -->
+  <section class="quote-rotator">
+    <p id="quote"></p>
+    <button id="nextQuoteBtn">→</button>
+  </section>
+
+  <section class="projects">
+    <h2>projects</h2>
     <ul>
-      <li>Second-year student studying IoT and electronics</li>
-      <li>Preparing for IIITH LEEE ECD; love doing maths</li>
+      <li><a href="#">python programs</a> : some personal python projects</li>
+      <li><a href="#">small iot projects</a> : basic IoT experiments</li>
+      <li><a href="#">personal website development</a> : building my website</li>
     </ul>
+  </section>
 
-    <!-- Quote Rotator -->
-    <section class="quote-rotator">
-      <h2>Inspirational Quotes</h2>
-      <p id="quote">Click "Next" to see a new quote!</p>
-      <button onclick="nextQuote()">Next Quote</button>
-    </section>
+  <section class="blog">
+    <h2>blog</h2>
+    <ul>
+      <li><a href="#">learning logs</a> : miscellaneous notes on coding, electronics, and math</li>
+      <li><a href="#">my notes</a> : study material and summaries</li>
+      <li><a href="#">gym progress updates</a> : my workout tracking</li>
+    </ul>
+  </section>
+</div>
 
-    <script>
-      const quotes = [
-        // Red Dead Redemption 2 (20)
-        "Arthur Morgan: 'We can't change what's done, we can only move on.'",
-        "Dutch van der Linde: 'We are more ghosts than people.'",
-        "Hosea Matthews: 'I wish I'd acquired wisdom at less of a price.'",
-        "Micah Bell: 'I don't want to kill you, John.'",
-        "John Marston: 'Arthur saved my life, more than once.'",
-        "Sadie Adler: 'I ain't afraid to die. I'm afraid of not living.'",
-        "Charles Smith: 'This world is too cruel for me to be anything but cruel.'",
-        "Bill Williamson: 'You don't know what it's like to be me.'",
-        "Javier Escuella: 'We all have our demons, amigo.'",
-        "Lenny Summers: 'I'm just trying to survive in this world.'",
-        "Sean MacGuire: 'Life's too short to be serious all the time.'",
-        "Tilly Jackson: 'You don't know me.'",
-        "Mary-Beth Gaskill: 'I'm just a girl trying to find her way.'",
-        "Karen Jones: 'I'm not a lady, I'm a fighter.'",
-        "Pearson: 'We all have our roles to play.'",
-        "Reverend Swanson: 'I ain't no saint.'",
-        "Uncle: 'I'm just here for the ride.'",
-        "Micah Bell: 'I'm the one who decides.'",
-        "Dutch van der Linde: 'We are outlaws, not criminals.'",
-        "Sadie Adler: 'We have to survive first, the rest will follow.'",
+<div class="contact-bar">
+  <a href="mailto:dhanrazx@proton.me">email</a>
+  <a href="https://github.com/kyahikahein" target="_blank">github</a>
+  <a href="https://twitter.com/dhanrazx" target="_blank">twitter</a>
+  <a href="https://open.spotify.com/user/1mh3ivy5cj3omoc3jhnkoylgf" target="_blank">spotify</a>
 
-        // Vinland Saga (20)
-        "Thors: 'You have no enemies. No one has enemies.'",
-        "Askeladd: 'A man, slave to gold, holds a whip...'",
-        "Thorfinn: 'I have no enemies.'",
-        "Canute: 'Why is there no love in the hearts of men?'",
-        "Thors: 'The future is forged in the crucible of uncertainty.'",
-        "Askeladd: 'Through the haze of fate, clarity emerges in moments of reflection.'",
-        "Thors: 'Embrace uncertainty, it heralds destined paths.'",
-        "Thors: 'In the mystery of fate, the unknown holds its greatest gift.'",
-        "Thorfinn: 'If you're empty, you can fit anything inside.'",
-        "Thors: 'Better to be empty if you want to be reborn.'",
-        "Thors: 'Fate leads us, but uncertainty allows choice.'",
-        "Askeladd: 'Wisdom is learned through hardship.'",
-        "Thors: 'Strength is tempered by compassion.'",
-        "Canute: 'Power is meaningless without purpose.'",
-        "Thors: 'Every ending is a new beginning.'",
-        "Thorfinn: 'True courage is standing for what you believe.'",
-        "Thors: 'A life without honor is not a life at all.'",
-        "Askeladd: 'Deception is a tool, not a weapon.'",
-        "Thors: 'Peace is the reward of patience.'",
-        "Thorfinn: 'Forgive, but never forget.'",
+</div>
 
-        // Attack on Titan (20)
-        "Eren Yeager: 'If you win, you live. If you lose, you die.'",
-        "Mikasa Ackerman: 'In a world full of darkness, you are my only light.'",
-        "Levi Ackerman: 'Sometimes you must become a monster to protect those you love.'",
-        "Armin Arlert: 'It doesn't matter how hard the past was, you can always start over.'",
-        "Eren Yeager: 'We’re born free. Some try to take it away. To hell with them!'",
-        "Mikasa Ackerman: 'As long as we’re together, I can do anything.'",
-        "Levi Ackerman: 'You are gonna lose, it's just because you are fighting me.'",
-        "Eren Yeager: 'Even gods can’t kill me against my wish.'",
-        "Armin Arlert: 'He was the light, always searching for beauty.'",
-        "Mikasa Ackerman: 'Sometimes we have to make hard choices.'",
-        "Eren Yeager: 'I will kill all our enemies, then be free.'",
-        "Levi Ackerman: 'Words can’t stop me, try if you dare.'",
-        "Eren Yeager: 'When they talked about monsters, I became one.'",
-        "Reiner Braun: 'Weakness is a choice.'",
-        "Eren Yeager: 'I have always been this way, no regrets.'",
-        "Mikasa Ackerman: 'This world is cruel and beautiful.'",
-        "Eren Yeager: 'Different choices might have led to freedom.'",
-        "Eren Yeager: 'I’m just a fool who wants freedom.'",
-        "Eren Yeager: 'Try to stop me from breathing!'",
-        "Eren Yeager: 'Even death will bow when I choose to live.'"
-      ];
+<script>
+const rdr2Quotes = [
+"Arthur Morgan: 'We can't change what's done, we can only move on.'",
+"Dutch van der Linde: 'We are more ghosts than people.'",
+"Hosea Matthews: 'I wish I'd acquired wisdom at less of a price.'",
+"Micah Bell: 'I don't want to kill you, John.'",
+"John Marston: 'Arthur saved my life, more than once.'"
+];
 
-      let index = 0;
-      function nextQuote() {
-        index = (index + 1) % quotes.length;
-        document.getElementById('quote').textContent = quotes[index];
-      }
-    </script>
+const aotQuotes = [
+"Eren Yeager: 'If you win, you live. If you lose, you die.'",
+"Mikasa Ackerman: 'In a world full of darkness, you are my only light.'",
+"Levi Ackerman: 'Sometimes you must become a monster to protect those you love.'",
+"Armin Arlert: 'It doesn't matter how hard the past was, you can always start over.'",
+"Eren Yeager: 'We’re born free. All of us, free.'"
+];
 
-    <!-- Projects -->
-    <section class="projects">
-      <h2>projects</h2>
-      <ul>
-        <li><a href="#">python programs</a> : some personal python projects</li>
-        <li><a href="#">small iot projects</a> : basic IoT experiments</li>
-        <li><a href="#">personal website development</a> : building my website</li>
-      </ul>
-    </section>
+const vinlandQuotes = [
+"Thors: 'You have no enemies. No one has enemies.'",
+"Askeladd: 'A man, slave to gold, holds a whip...'",
+"Thorfinn: 'I have no enemies.'",
+"Canute: 'Why is there no love in the hearts of men?'",
+"Thors: 'The future is often forged in the crucible of uncertainty.'"
+];
 
-    <!-- Blog -->
-    <section class="blog">
-      <h2>blog</h2>
-      <ul>
-        <li><a href="#">learning logs</a> : miscellaneous notes on coding, electronics, and math</li>
-        <li><a href="#">my notes</a> : study material and summaries</li>
-        <li><a href="#">gym progress updates</a> : my workout tracking</li>
-      </ul>
-    </section>
-  </div>
+let index = 0;
+let category = 0;
+const quoteEl = document.getElementById('quote');
+const nextBtn = document.getElementById('nextQuoteBtn');
 
-  <!-- Contact Bar -->
-  <div class="contact-bar">
-    <a href="mailto:dhanrazx@proton.me">email</a>
-    <a href="https://github.com/kyahikahein" target="_blank">github</a>
-    <a href="https://twitter.com/dhanrazx" target="_blank">twitter</a>
-    <a href="https://open.spotify.com/user/1mh3ivy5cj3omoc3jhnkoylgf" target="_blank">spotify</a>
+function showQuote() {
+  if(category === 0) quoteEl.textContent = rdr2Quotes[index % rdr2Quotes.length];
+  else if(category === 1) quoteEl.textContent = aotQuotes[index % aotQuotes.length];
+  else quoteEl.textContent = vinlandQuotes[index % vinlandQuotes.length];
+}
 
-  </div>
+showQuote();
+
+nextBtn.addEventListener('click', () => {
+  index++;
+  if(category === 0 && index >= rdr2Quotes.length) {category=1; index=0;}
+  else if(category === 1 && index >= aotQuotes.length) {category=2; index=0;}
+  else if(category === 2 && index >= vinlandQuotes.length) {category=0; index=0;}
+  showQuote();
+});
+</script>
 </body>
 </html>
