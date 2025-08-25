@@ -5,90 +5,13 @@ body {
   background-color: #121212;
   color: #f1f1f1;
   transition: background 0.3s, color 0.3s;
-}
-
-/* Light Theme */
-body.light-theme {
-  background-color: #fafafa;
-  color: #222;
-}
-
-/* Navbar */
-.navbar {
-  background: #1e1e1e;
-  padding: 0.8rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-body.light-theme .navbar {
-  background: #fff;
-}
-body.light-theme .navbar a {
-  color: #222;
-}
-.navbar a:hover {
-  color: #00c8ff;
-}
-
-/* Profile Picture */
-.pfp {
-  width: 150px;
-  border-radius: 50%;
-  margin: 1rem auto;
-  display: block;
-}
-
-/* Theme Switcher */
-.theme-switcher {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 1rem 0;
-}
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-}
-.switch input { display: none; }
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
-  border-radius: 20px;
-  transition: .3s;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 14px; width: 14px;
-  left: 3px; bottom: 3px;
-  background-color: white;
-  border-radius: 50%;
-  transition: .3s;
-}
-input:checked + .slider {
-  background-color: #00c8ff;
-}
-input:checked + .slider:before {
-  transform: translateX(20px);
+  line-height: 1.6;
 }
 
 /* Headings */
 h1, h2, h3 {
-  text-align: center;
+  text-align: left;  /* LEFT aligned instead of center */
+  margin-left: 1rem;
 }
 h2 {
   margin-top: 2rem;
@@ -107,7 +30,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem;   /* keep left padding consistent */
 }
 .skill-item {
   background: #1e1e1e;
@@ -131,29 +54,26 @@ body.light-theme .skill-item {
 /* Sections */
 section {
   padding: 1rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
+  text-align: left;
 }
 ul {
   list-style: disc inside;
-  padding: 0;
+  padding-left: 1rem;
+}
+.intro {
+  padding-left: 1.2rem;
+  margin-top: -0.5rem;
 }
 
 /* Footer */
 .footer {
-  text-align: center;
+  text-align: left;
   padding: 1rem;
   margin-top: 2rem;
   border-top: 1px solid #444;
-}
-.contact-bar {
-  margin-top: 0.5rem;
-}
-.contact-bar a {
-  margin: 0 10px;
-  color: #00c8ff;
-  text-decoration: none;
-}
-.contact-bar a:hover {
-  text-decoration: underline;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
