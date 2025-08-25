@@ -1,4 +1,3 @@
-// Theme toggle
 const themeToggle = document.getElementById('themeToggle');
 
 themeToggle.addEventListener('change', () => {
