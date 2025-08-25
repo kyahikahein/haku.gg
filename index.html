@@ -1,122 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>haku's site</title>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <style>
-    /* General Body */
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Source Code Pro', monospace;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>haku's site</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<style>
+  /* General Body */
+  body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Source Code Pro', monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
 
-    /* Main container */
-    .main-container {
-      width: 700px;
-      margin-top: 20px;
-      position: relative;
-      line-height: 1.8;
-    }
+  /* Main container */
+  .main-container {
+    width: 700px;
+    margin-top: 20px;
+    position: relative;
+    line-height: 1.8;
+  }
 
-    /* Banner */
-    .banner {
-      width: 100%;
-      height: 150px;
-      background: url('https://i.pinimg.com/originals/19/5b/be/195bbe7a9f93f6c817d928dafb367ea4.gif') center/cover no-repeat;
-      position: relative;
-      margin-bottom: 80px;
-    }
+  /* Banner */
+  .banner {
+    width: 100%;
+    height: 150px;
+    background: url('https://i.pinimg.com/originals/19/5b/be/195bbe7a9f93f6c817d928dafb367ea4.gif') center/cover no-repeat;
+    position: relative;
+    margin-bottom: 80px;
+  }
 
-    /* Profile picture */
-    .pfp {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 15px;
-      position: absolute;
-      top: 60px; 
-      left: 20px;
-    }
+  /* Profile picture */
+  .pfp {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+  }
 
-    /* Headings */
-    h1 {
-      margin-top: -40px;
-      font-size: 2.2rem;
-      text-transform: lowercase;
-      line-height: 1.2;
-    }
+  /* Headings */
+  h1 {
+    margin-top: -40px;
+    font-size: 2.2rem;
+    text-transform: lowercase;
+    line-height: 1.2;
+  }
 
-    h1 a {
-      color: #39FFFC; /* dark-mode friendly */
-      text-decoration: none;
-      border-bottom: 2px solid #39FFFC; /* subtle underline */
-      padding-bottom: 2px;
-      transition: border-color 0.3s, color 0.3s;
-    }
+  h1 a {
+    color: #39FFFC;
+    text-decoration: none;
+    border-bottom: 2px solid #39FFFC;
+    padding-bottom: 2px;
+    transition: border-color 0.3s, color 0.3s;
+  }
 
-    h1 a:hover {
-      border-color: #0CF; /* hover highlight */
-    }
+  h1 a:hover {
+    border-color: #0CF;
+  }
 
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 35px;
-      margin-bottom: 20px;
-    }
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
 
-    /* Lists */
-    ul {
-      list-style-type: disc;
-      list-style-position: outside;
-      margin-left: 50px;
-      padding-left: 0;
-    }
+  /* Lists */
+  ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 50px;
+    padding-left: 0;
+  }
 
-    ul li::marker {
-      content: "· ";
-      font-size: 20px;
-      color: #39FFFC; /* match link color */
-    }
+  ul li::marker {
+    content: "· ";
+    font-size: 20px;
+    color: #39FFFC;
+  }
 
-    ul li {
-      margin-bottom: 15px; 
-      font-size: 1rem;
-    }
+  ul li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
 
-    /* Links */
-    a {
-      color: #39FFFC; /* always readable on dark mode */
-      text-decoration: none;
-      border-bottom: 2px solid #39FFFC;
-      padding-bottom: 2px;
-      transition: border-color 0.3s, color 0.3s;
-    }
+  /* Links */
+  a {
+    color: #39FFFC;
+    text-decoration: none;
+    border-bottom: 2px solid #39FFFC;
+    padding-bottom: 2px;
+    transition: border-color 0.3s, color 0.3s;
+  }
 
-    a:hover {
-      border-color: #0CF; /* subtle hover effect */
-    }
+  a:hover {
+    border-color: #0CF;
+  }
 
-    /* Contact Bar */
-    .contact-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #111;
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      z-index: 1000;
-    }
-  </style>
+  /* Contact Bar */
+  .contact-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 1000;
+  }
+</style>
 </head>
 <body>
   <div class="main-container">
@@ -129,34 +129,40 @@
       <li>i am a second year student, studying iot and electronics</li>
       <li>preparing for iiith leee ecd. love doing maths.</li>
     </ul>
-
+   
     <section class="experience">
       <h2>experience</h2>
       <ul>
-        <li>python (beginner, intermediate projects ongoing)</li>
-        <li>electronics, digital computer organization, and math</li>
-        <li>gym training (from scratch, tracking progress)</li>
+        <li><a href="#">Python Projects</a> : built small automation and data analysis scripts</li>
+        <li><a href="#">IoT Experiments</a> : developed basic sensor-based electronics prototypes</li>
+        <li><a href="#">Digital Systems Lab</a> : worked on logic circuits and microcontroller exercises</li>
       </ul>
     </section>
+
 
     <section class="projects">
       <h2>projects</h2>
       <ul>
-        <li><a href="#">intermediate python programs</a></li>
-        <li><a href="#">small iot projects</a></li>
-        <li><a href="#">personal website development</a></li>
+        <li><a href="#">intermediate python programs</a> : some personal Python projects</li>
+        <li><a href="#">small iot projects</a> : basic IoT experiments</li>
+        <li><a href="#">personal website development</a> : building my website</li>
       </ul>
     </section>
 
     <section class="blog">
       <h2>blog</h2>
       <ul>
-        <li><a href="#">gym progress updates</a></li>
-        <li><a href="#">my notes</a></li>
-        <li><a href="#">tech experiments insights</a></li>
+        <li><a href="#">technical blogs</a> : all my blogs about machine learning</li>
+        <li><a href="#">gym progress updates</a> : my workout tracking</li>
+        <li><a href="#">my notes</a> : study material and summaries</li>
       </ul>
     </section>
   </div>
 
   <div class="contact-bar">
-    <a href="mailto:dha
+    <a href="mailto:dhanrazx@proton.me">email</a>
+    <a href="https://github.com/kyahikahein" target="_blank">github</a>
+    <a href="https://twitter.com/dhanrazx" target="_blank">twitter</a>
+  </div>
+</body>
+</html>
