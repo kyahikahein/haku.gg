@@ -1,91 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>haku</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>haku's site</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://pbs.twimg.com/profile_images/1956422441569312770/OJe7wx2f_400x400.jpg" type="image/png">
 </head>
 <body>
-    <canvas id="matrix-canvas"></canvas>
-    <div id="soundIndicator" class="sound-indicator">click!</div>
-    
-    <div class="main-container">
-        <div class="banner">
-            <img src="your-profile-pic.jpg" alt="Profile Picture" class="pfp">
-        </div>
-        
-        <div class="theme-switcher">
-            <span>themes:</span>
-            <div class="theme-options">
-                <button class="theme-btn dark active" data-theme="dark"></button>
-                <button class="theme-btn light" data-theme="light"></button>
-                <button class="theme-btn matrix" data-theme="matrix"></button>
-                <button class="theme-btn retro" data-theme="retro"></button>
-                <button class="theme-btn sunset" data-theme="sunset"></button>
-            </div>
-        </div>
-        
-        <h1><a href="#" id="typingText">hi, i'm haku</a></h1>
-        
-        <ul>
-            <li>i am a second year student, studying IoT and electronics</li>
-            <li>preparing for IIITH LEEE ECD. love doing maths.</li>
-        </ul>
-        
-        <div class="skills">
-            <h2>skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item"><span>Python</span></div>
-                <div class="skill-item"><span>C++</span></div>
-                <div class="skill-item"><span>HTML</span></div>
-                <div class="skill-item"><span>MySQL</span></div>
-                <div class="skill-item"><span>Git</span></div>
-                <div class="skill-item"><span>VS Code</span></div>
-                <div class="skill-item"><span>Canva</span></div>
-                <div class="skill-item"><span>DaVinci</span></div>
-                <div class="skill-item"><span>MATLAB</span></div>
-                <div class="skill-item"><span>Pandas</span></div>
-                <div class="skill-item"><span>NumPy</span></div>
-                <div class="skill-item"><span>Matplotlib</span></div>
-                <div class="skill-item"><span>LeetCode</span></div>
-            </div>
-        </div>
-        
-        <div class="spotify">
-            <h2>music</h2>
-            <div class="spotify-embed">
-                <!-- Add your Spotify embed code here -->
-                <iframe src="your-spotify-playlist-embed-url" width="100%" height="352" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            </div>
-        </div>
-        
-        <div class="projects">
-            <h2>projects</h2>
-            <ul>
-                <li>python programs : some personal python projects</li>
-                <li>small iot projects : basic IoT experiments</li>
-                <li>personal website development : building my website</li>
-            </ul>
-        </div>
-        
-        <div class="blog">
-            <h2>blog</h2>
-            <ul>
-                <li>learning logs : miscellaneous notes on coding, electronics, and math</li>
-                <li>my notes : study material and summaries</li>
-                <li>gym progress updates : my workout tracking</li>
-            </ul>
-        </div>
+
+<!-- Main Container -->
+<div class="main-container">
+  <div class="banner">
+    <img src="https://pbs.twimg.com/profile_images/1956422441569312770/OJe7wx2f_400x400.jpg" alt="profile picture" class="pfp">
+  </div>
+
+  <!-- Theme Switcher on right -->
+  <div class="theme-switcher">
+    <span>Toggle Theme</span>
+    <label class="switch">
+      <input type="checkbox" id="themeToggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <h1>hi, i'm <a href="index.html">haku</a></h1>
+  <ul>
+    <li>i am a second year student, studying IoT and electronics</li>
+    <li>preparing for IIITH LEEE ECD. love doing maths.</li>
+  </ul>
+
+  <section class="skills">
+    <h2>skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <span>Python</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+        <span>C++</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+        <span>HTML</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+        <span>MySQL</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+        <span>Git</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+        <span>VS Code</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva">
+        <span>Canva</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve">
+        <span>DaVinci</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB">
+        <span>MATLAB</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+        <span>Pandas</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+        <span>NumPy</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://raw.githubusercontent.com/matplotlib/matplotlib/main/doc/_static/favicon.ico" alt="Matplotlib">
+        <span>Matplotlib</span>
+      </div>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" alt="LeetCode">
+        <span>LeetCode</span>
+      </div>
     </div>
-    
-    <div class="contact-bar">
-        <a href="mailto:your@email.com">email</a>
-        <a href="https://github.com/yourusername" target="_blank">github</a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin</a>
-    </div>
-    
-    <script src="script.js"></script>
+  </section>
+
+  <section class="projects">
+    <h2>projects</h2>
+    <ul>
+      <li><a href="#">python programs</a> : some personal python projects</li>
+      <li><a href="#">small iot projects</a> : basic IoT experiments</li>
+      <li><a href="#">personal website development</a> : building my website</li>
+    </ul>
+  </section>
+
+  <section class="blog">
+    <h2>blog</h2>
+    <ul>
+      <li><a href="#">learning logs</a> : miscellaneous notes on coding, electronics, and math</li>
+      <li><a href="#">my notes</a> : study material and summaries</li>
+      <li><a href="#">gym progress updates</a> : my workout tracking</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>made with ❤️ by haku © 2025</p>
+  </div>
+</div>
+
+<!-- Contact Bar -->
+<div class="contact-bar">
+  <a href="mailto:dhanrazx@proton.me">email</a>
+  <a href="https://github.com/kyahikahein" target="_blank">github</a>
+  <a href="https://twitter.com/dhanrazx" target="_blank">twitter</a>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
