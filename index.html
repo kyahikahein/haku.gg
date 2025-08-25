@@ -8,7 +8,7 @@
 <style>
 body {
   background-color: #000;
-  color: #d0e7ff;
+  color: #ffffff;
   font-family: 'Source Code Pro', monospace;
   margin: 0;
   padding: 0;
@@ -44,9 +44,9 @@ h1 {
   line-height: 1.2;
 }
 h1 a {
-  color: #d0e7ff;
+  color: #00d1ff;
   text-decoration: none;
-  border-bottom: 2px solid #d0e7ff;
+  border-bottom: 2px solid #00d1ff;
   padding-bottom: 2px;
   transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
   display: inline-block;
@@ -64,16 +64,16 @@ ul {
 ul li::marker {
   content: "· ";
   font-size: 20px;
-  color: #d0e7ff;
+  color: #ffffff;
 }
 ul li {
   margin-bottom: 15px;
   font-size: 1rem;
 }
 a {
-  color: #d0e7ff;
+  color: #00d1ff;
   text-decoration: none;
-  border-bottom: 2px solid #d0e7ff;
+  border-bottom: 2px solid #00d1ff;
   padding-bottom: 2px;
   transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
   display: inline-block;
@@ -92,7 +92,7 @@ a:hover {
   border-radius: 8px;
 }
 .quote-rotator p {
-  color: #a0d1ff;
+  color: #a0e0ff;
   font-style: italic;
   font-size: 1.2rem;
   margin: 0;
@@ -101,7 +101,7 @@ a:hover {
 }
 .quote-rotator button {
   background: transparent;
-  color: #a0d1ff;
+  color: #00d1ff;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
@@ -125,9 +125,9 @@ a:hover {
   z-index: 1000;
 }
 .contact-bar a {
-  color: #d0e7ff;
+  color: #00d1ff;
   text-decoration: none;
-  border-bottom: 2px solid #d0e7ff;
+  border-bottom: 2px solid #00d1ff;
   padding-bottom: 2px;
   transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
   display: inline-block;
@@ -173,8 +173,6 @@ a:hover {
   <a href="mailto:dhanrazx@proton.me">email</a>
   <a href="https://github.com/kyahikahein" target="_blank">github</a>
   <a href="https://twitter.com/dhanrazx" target="_blank">twitter</a>
-  <a href="https://open.spotify.com/user/1mh3ivy5cj3omoc3jhnkoylgf" target="_blank">spotify</a>
-
 </div>
 <script>
 const rdr2Quotes = ["Arthur Morgan: 'We can't change what's done, we can only move on.'","Dutch van der Linde: 'We are more ghosts than people.'","Hosea Matthews: 'I wish I'd acquired wisdom at less of a price.'","Micah Bell: 'I don't want to kill you, John.'","John Marston: 'Arthur saved my life, more than once.'"];
@@ -183,35 +181,43 @@ const vinlandQuotes = ["Thors: 'You have no enemies. No one has enemies.'","Aske
 const unknownQuotes = ["Insert your custom quotes here...","Another placeholder quote...","Yet another example quote..."];
 
 let index = 0;
-let category = 0;
+let category = 0; // 0: RDR2, 1: AOT, 2: Vinland, 3: Unknown
 const quoteEl = document.getElementById('quote');
 const nextBtn = document.getElementById('nextQuoteBtn');
 
-function showQuote() {
-  if(category === 0) quoteEl.textContent = rdr2Quotes[index % rdr2Quotes.length];
-  else if(category === 1) quoteEl.textContent = aotQuotes[index % aotQuotes.length];
-  else if(category === 2) quoteEl.textContent = vinlandQuotes[index % vinlandQuotes.length];
-  else quoteEl.textContent = unknownQuotes[index % unknownQuotes.length];
+function playClickSound() {
+  const audio = new Audio('https://www.soundjay.com/button/beep-07.mp3');
+  audio.play();
 }
 
-showQuote();
+function showQuote() {
+  let quotes;
+  if(category === 0) quotes = rdr2Quotes;
+  else if(category === 1) quotes = aotQuotes;
+  else if(category === 2) quotes = vinlandQuotes;
+  else quotes = unknownQuotes;
+  
+  quoteEl.textContent = quotes[index % quotes.length];
+}
+
 nextBtn.addEventListener('click', () => {
+  playClickSound();
   index++;
-  if(category === 0 && index >= rdr2Quotes.length) {category=1; index=0;}
-  else if(category === 1 && index >= aotQuotes.length) {category=2; index=0;}
-  else if(category === 2 && index >= vinlandQuotes.length) {category=3; index=0;}
-  else if(category === 3 && index >= unknownQuotes.length) {category=0; index=0;}
+  let currentQuotes;
+  if(category === 0) currentQuotes = rdr2Quotes;
+  else if(category === 1) currentQuotes = aotQuotes;
+  else if(category === 2) currentQuotes = vinlandQuotes;
+  else currentQuotes = unknownQuotes;
+  
+  if(index >= currentQuotes.length) {
+    index = 0;
+    category = (category + 1) % 4; // cycle categories
+  }
+  
   showQuote();
 });
 
-const clickSound = new Audio('https://www.soundjay.com/button/sounds/button-16.mp3');
-const allLinks = document.querySelectorAll('a');
-allLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  });
-});
+showQuote();
 </script>
 </body>
 </html>
