@@ -59,6 +59,7 @@
     border-bottom: 2px solid #39FFFC;
     padding-bottom: 2px;
     transition: border-color 0.3s, color 0.3s;
+    cursor: pointer;
   }
 
   h1 a:hover {
@@ -103,6 +104,32 @@
     border-color: #0CF;
   }
 
+  /* Quote Rotator */
+  .quote-rotator {
+    margin: 30px 0;
+    text-align: center;
+  }
+
+  .quote-rotator p {
+    color: #39FFFC;
+    font-style: italic;
+    margin-bottom: 10px;
+    min-height: 40px;
+  }
+
+  .quote-rotator button {
+    background: #111;
+    color: #39FFFC;
+    border: 1px solid #39FFFC;
+    padding: 5px 12px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+
+  .quote-rotator button:hover {
+    background: #222;
+  }
+
   /* Contact Bar */
   .contact-bar {
     position: fixed;
@@ -120,128 +147,114 @@
 </head>
 <body>
   <div class="main-container">
+    <!-- Banner and Profile Picture -->
     <div class="banner">
       <img src="https://pbs.twimg.com/profile_images/1956422441569312770/OJe7wx2f_400x400.jpg" alt="profile picture" class="pfp">
     </div>
 
+    <!-- Heading -->
     <h1>hi, i'm <a href="index.html">haku</a></h1>
+
+    <!-- About Me -->
     <ul>
-      <li>i am a second year student, studying iot and electronics</li>
-      <li>preparing for iiith leee ecd. love doing maths.</li>
+      <li>Second-year student studying IoT and electronics</li>
+      <li>Preparing for IIITH LEEE ECD; love doing maths</li>
     </ul>
 
-   <section class="quote-rotator">
-    <h2>Inspirational Quotes</h2>
-    <p id="quote">Click "Next" to see a new quote!</p>
-    <button onclick="nextQuote()">Next Quote</button>
-  </section>
+    <!-- Quote Rotator -->
+    <section class="quote-rotator">
+      <h2>Inspirational Quotes</h2>
+      <p id="quote">Click "Next" to see a new quote!</p>
+      <button onclick="nextQuote()">Next Quote</button>
+    </section>
 
-  <script>
-    const quotes = [
-  // Red Dead Redemption 2 Quotes
-  "Arthur Morgan: 'We can't change what's done, we can only move on.'",
-  "Dutch van der Linde: 'We are more ghosts than people.'",
-  "Hosea Matthews: 'I wish I'd acquired wisdom at less of a price.'",
-  "Micah Bell: 'I don't want to kill you, John.'",
-  "John Marston: 'Arthur saved my life, more than once.'",
-  "Sadie Adler: 'I ain't afraid to die. I'm afraid of not living.'",
-  "Charles Smith: 'This world is too cruel for me to be anything but cruel.'",
-  "Bill Williamson: 'You don't know what it's like to be me.'",
-  "Javier Escuella: 'We all have our demons, amigo.'",
-  "Lenny Summers: 'I'm just trying to survive in this world.'",
-  "Sean MacGuire: 'Life's too short to be serious all the time.'",
-  "Tilly Jackson: 'You don't know me.'",
-  "Mary-Beth Gaskill: 'I'm just a girl trying to find her way.'",
-  "Karen Jones: 'I'm not a lady, I'm a fighter.'",
-  "Pearson: 'We all have our roles to play.'",
-  "Reverend Swanson: 'I ain't no saint.'",
-  "Uncle: 'I'm just here for the ride.'",
-  "Micah Bell: 'I'm the one who decides.'",
-  "Dutch van der Linde: 'We are outlaws, not criminals.'",
+    <script>
+      const quotes = [
+        // Red Dead Redemption 2 (20)
+        "Arthur Morgan: 'We can't change what's done, we can only move on.'",
+        "Dutch van der Linde: 'We are more ghosts than people.'",
+        "Hosea Matthews: 'I wish I'd acquired wisdom at less of a price.'",
+        "Micah Bell: 'I don't want to kill you, John.'",
+        "John Marston: 'Arthur saved my life, more than once.'",
+        "Sadie Adler: 'I ain't afraid to die. I'm afraid of not living.'",
+        "Charles Smith: 'This world is too cruel for me to be anything but cruel.'",
+        "Bill Williamson: 'You don't know what it's like to be me.'",
+        "Javier Escuella: 'We all have our demons, amigo.'",
+        "Lenny Summers: 'I'm just trying to survive in this world.'",
+        "Sean MacGuire: 'Life's too short to be serious all the time.'",
+        "Tilly Jackson: 'You don't know me.'",
+        "Mary-Beth Gaskill: 'I'm just a girl trying to find her way.'",
+        "Karen Jones: 'I'm not a lady, I'm a fighter.'",
+        "Pearson: 'We all have our roles to play.'",
+        "Reverend Swanson: 'I ain't no saint.'",
+        "Uncle: 'I'm just here for the ride.'",
+        "Micah Bell: 'I'm the one who decides.'",
+        "Dutch van der Linde: 'We are outlaws, not criminals.'",
+        "Sadie Adler: 'We have to survive first, the rest will follow.'",
 
-  // Vinland Saga Quotes
-  "Thors: 'You have no enemies. No one has enemies.'",
-  "Askeladd: 'A man, slave to gold, holds a whip... And beats the slave he bought with that gold as if to claim HE is the master.'",
-  "Thorfinn: 'I have no enemies.'",
-  "Canute: 'Why is there no love in the hearts of men?'",
-  "Thors: 'The future is often forged in the crucible of uncertainty.'",
-  "Askeladd: 'Through the haze of fate, clarity emerges in moments of reflection.'",
-  "Thors: 'Embrace the uncertainty, for it is the herald of destined paths.'",
-  "Thors: 'In the mystery of fate, the unknown holds its greatest gift.'",
-  "Thorfinn: 'If you're empty, then you can fit anything inside you.'",
-  "Thors: 'It's better to be empty if you want to be reborn.'",
-  "Thors: 'Fate leads us, but uncertainty allows us to choose the pace.'",
-  "Thors: 'Embrace the uncertainty, for it is the herald of destined paths.'",
-  "Thors: 'In the mystery of fate, the unknown holds its greatest gift.'",
-  "Thors: 'The future is often forged in the crucible of uncertainty.'",
-  "Thors: 'Through the haze of fate, clarity emerges in moments of reflection.'",
-  "Thors: 'Fate leads us, but uncertainty allows us to choose the pace.'",
-  "Thors: 'Embrace the uncertainty, for it is the herald of destined paths.'",
-  "Thors: 'In the mystery of fate, the unknown holds its greatest gift.'",
-  "Thors: 'The future is often forged in the crucible of uncertainty.'",
+        // Vinland Saga (20)
+        "Thors: 'You have no enemies. No one has enemies.'",
+        "Askeladd: 'A man, slave to gold, holds a whip...'",
+        "Thorfinn: 'I have no enemies.'",
+        "Canute: 'Why is there no love in the hearts of men?'",
+        "Thors: 'The future is forged in the crucible of uncertainty.'",
+        "Askeladd: 'Through the haze of fate, clarity emerges in moments of reflection.'",
+        "Thors: 'Embrace uncertainty, it heralds destined paths.'",
+        "Thors: 'In the mystery of fate, the unknown holds its greatest gift.'",
+        "Thorfinn: 'If you're empty, you can fit anything inside.'",
+        "Thors: 'Better to be empty if you want to be reborn.'",
+        "Thors: 'Fate leads us, but uncertainty allows choice.'",
+        "Askeladd: 'Wisdom is learned through hardship.'",
+        "Thors: 'Strength is tempered by compassion.'",
+        "Canute: 'Power is meaningless without purpose.'",
+        "Thors: 'Every ending is a new beginning.'",
+        "Thorfinn: 'True courage is standing for what you believe.'",
+        "Thors: 'A life without honor is not a life at all.'",
+        "Askeladd: 'Deception is a tool, not a weapon.'",
+        "Thors: 'Peace is the reward of patience.'",
+        "Thorfinn: 'Forgive, but never forget.'",
 
-  // Attack on Titan Quotes
-  "Eren Yeager: 'If you win, you live. If you lose, you die.'",
-  "Mikasa Ackerman: 'In a world full of darkness, you are my only light.'",
-  "Levi Ackerman: 'Sometimes you must become a monster to protect those you love.'",
-  "Armin Arlert: 'It doesn't matter how hard the past was, you can always start over.'",
-  "Eren Yeager: 'We’re born free. All of us, free. Some don’t believe it, some try to take it away. To hell with them!'",
-  "Mikasa Ackerman: 'As long as we’re together, I can do anything.'",
-  "Levi Ackerman: 'You are gonna lose, it's just because you are fighting me.'",
-  "Eren Yeager: 'Even gods can’t kill me against my wish, what makes you think you can?'",
-  "Armin Arlert: 'He was the light, always searching for the beauty in a cruel world.'",
-  "Mikasa Ackerman: 'Sometimes we have to make choices we don’t want to, but we must.'",
-  "Eren Yeager: 'I will kill all our enemies over there, then I will finally be free.'",
-  "Levi Ackerman: 'Words can’t stop me, try making me suffer.'",
-  "Eren Yeager: 'When they talked about monsters, I became one myself.'",
-  "Reiner Braun: 'Weakness is a choice, either you rise, or you let the world walk over you.'",
-  "Eren Yeager: 'I have always been this way, and I don’t regret it one bit.'",
-  "Mikasa Ackerman: 'This world is cruel and also very beautiful.'",
-  "Eren Yeager: 'If things had been different, if I had been different, maybe then I have achieved freedom.'",
-  "Eren Yeager: 'I’m just a fool who want freedom too much.'",
-  "Eren Yeager: 'If you want to try and stop me, then try to stop me from breathing!'",
-  "Eren Yeager: 'Even death will bow down when I decide to stay alive.'"
-];
+        // Attack on Titan (20)
+        "Eren Yeager: 'If you win, you live. If you lose, you die.'",
+        "Mikasa Ackerman: 'In a world full of darkness, you are my only light.'",
+        "Levi Ackerman: 'Sometimes you must become a monster to protect those you love.'",
+        "Armin Arlert: 'It doesn't matter how hard the past was, you can always start over.'",
+        "Eren Yeager: 'We’re born free. Some try to take it away. To hell with them!'",
+        "Mikasa Ackerman: 'As long as we’re together, I can do anything.'",
+        "Levi Ackerman: 'You are gonna lose, it's just because you are fighting me.'",
+        "Eren Yeager: 'Even gods can’t kill me against my wish.'",
+        "Armin Arlert: 'He was the light, always searching for beauty.'",
+        "Mikasa Ackerman: 'Sometimes we have to make hard choices.'",
+        "Eren Yeager: 'I will kill all our enemies, then be free.'",
+        "Levi Ackerman: 'Words can’t stop me, try if you dare.'",
+        "Eren Yeager: 'When they talked about monsters, I became one.'",
+        "Reiner Braun: 'Weakness is a choice.'",
+        "Eren Yeager: 'I have always been this way, no regrets.'",
+        "Mikasa Ackerman: 'This world is cruel and beautiful.'",
+        "Eren Yeager: 'Different choices might have led to freedom.'",
+        "Eren Yeager: 'I’m just a fool who wants freedom.'",
+        "Eren Yeager: 'Try to stop me from breathing!'",
+        "Eren Yeager: 'Even death will bow when I choose to live.'"
+      ];
 
-let index = 0;
-function nextQuote() {
-  index = (index + 1) % quotes.length;
-  document.getElementById('quote').textContent = quotes[index];
-}
-</script>
+      let index = 0;
+      function nextQuote() {
+        index = (index + 1) % quotes.length;
+        document.getElementById('quote').textContent = quotes[index];
+      }
+    </script>
 
-<style>
-.quote-rotator {
-  margin: 20px 0;
-  text-align: center;
-}
-.quote-rotator p {
-  color: #39FFFC;
-  font-style: italic;
-  margin-bottom: 5px;
-}
-.quote-rotator button {
-  background: #111;
-  color: #39FFFC;
-  border: 1px solid #39FFFC;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-.quote-rotator button:hover {
-  background: #222;
-}
-</style>
-
-
+    <!-- Projects -->
     <section class="projects">
       <h2>projects</h2>
       <ul>
         <li><a href="#">python programs</a> : some personal python projects</li>
-        <li><a href="#">small iot projects</a> : basic IoT experiments (....)</li>
+        <li><a href="#">small iot projects</a> : basic IoT experiments</li>
         <li><a href="#">personal website development</a> : building my website</li>
       </ul>
     </section>
 
+    <!-- Blog -->
     <section class="blog">
       <h2>blog</h2>
       <ul>
@@ -252,15 +265,13 @@ function nextQuote() {
     </section>
   </div>
 
+  <!-- Contact Bar -->
   <div class="contact-bar">
     <a href="mailto:dhanrazx@proton.me">email</a>
     <a href="https://github.com/kyahikahein" target="_blank">github</a>
     <a href="https://twitter.com/dhanrazx" target="_blank">twitter</a>
+    <a href="https://open.spotify.com/user/1mh3ivy5cj3omoc3jhnkoylgf" target="_blank">spotify</a>
+
   </div>
 </body>
 </html>
-
-
-
-
-
