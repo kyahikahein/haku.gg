@@ -1,79 +1,110 @@
-/* General */
 body {
-  margin: 0;
   font-family: 'Source Code Pro', monospace;
+  margin: 0;
+  padding: 0;
   background-color: #121212;
-  color: #f1f1f1;
-  transition: background 0.3s, color 0.3s;
-  line-height: 1.6;
+  color: white;
 }
 
-/* Headings */
+.light-theme {
+  background-color: white;
+  color: black;
+}
+
+.main-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.pfp {
+  width: 150px;
+  border-radius: 50%;
+  display: block;
+}
+
 h1, h2, h3 {
-  text-align: left;  /* LEFT aligned instead of center */
-  margin-left: 1rem;
-}
-h2 {
-  margin-top: 2rem;
-  color: #00c8ff;
-}
-h3 {
-  margin-top: 1.2rem;
-  color: #00c8ff;
-}
-.highlight {
-  color: #00c8ff;
+  margin-top: 20px;
 }
 
-/* Skills Grid */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  padding: 0.5rem 1rem;   /* keep left padding consistent */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
 }
+
 .skill-item {
   background: #1e1e1e;
-  padding: 1rem;
+  padding: 10px;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.2s;
+  width: 100px;
 }
-body.light-theme .skill-item {
-  background: #f1f1f1;
-}
-.skill-item:hover {
-  transform: scale(1.05);
-}
+
 .skill-item img {
   width: 40px;
   height: 40px;
-  margin-bottom: 0.5rem;
-}
-
-/* Sections */
-section {
-  padding: 1rem;
-  max-width: 900px;
+  display: block;
   margin: auto;
-  text-align: left;
-}
-ul {
-  list-style: disc inside;
-  padding-left: 1rem;
-}
-.intro {
-  padding-left: 1.2rem;
-  margin-top: -0.5rem;
 }
 
-/* Footer */
 .footer {
-  text-align: left;
-  padding: 1rem;
-  margin-top: 2rem;
-  border-top: 1px solid #444;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1e1e1e;
+  text-align: center;
+  padding: 10px;
+}
+
+.contact-bar a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: cyan;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-left: 10px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: gray;
+  border-radius: 24px;
+  transition: .4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: cyan;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
