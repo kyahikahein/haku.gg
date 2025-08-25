@@ -4,30 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>haku's site</title>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+:root {
+  --primary-color: #00d1ff;
+  --secondary-color: #39FFFC;
+  --text-color: #ffffff;
+  --bg-color: #000;
+  --quote-color: #a0e0ff;
+  --contact-bg: #111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #000;
-  color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: 'Source Code Pro', monospace;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
+
 .main-container {
-  width: 700px;
+  width: min(1200px, 90vw);
   margin-top: 20px;
+  margin-bottom: 100px;
   position: relative;
   line-height: 1.8;
+  display: flex;
+  gap: 40px;
 }
+
+.left-content {
+  flex: 1;
+  max-width: 700px;
+}
+
+.right-sidebar {
+  width: 350px;
+  flex-shrink: 0;
+}
+
 .banner {
   width: 100%;
   height: 150px;
   background: url('https://i.pinimg.com/originals/19/5b/be/195bbe7a9f93f6c817d928dafb367ea4.gif') center/cover no-repeat;
   position: relative;
   margin-bottom: 80px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 209, 255, 0.2);
 }
+
 .pfp {
   width: 120px;
   height: 120px;
@@ -36,105 +69,257 @@ body {
   position: absolute;
   top: 60px;
   left: 20px;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 4px 20px rgba(0, 209, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.pfp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 209, 255, 0.6);
+}
+
 h1 {
   margin-top: -40px;
-  font-size: 2.2rem;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
   text-transform: lowercase;
   line-height: 1.2;
+  font-weight: 500;
 }
+
 h1 a {
-  color: #00d1ff;
+  color: var(--primary-color);
   text-decoration: none;
-  border-bottom: 2px solid #00d1ff;
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 2px;
-  transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
+  transition: all 0.3s ease;
   display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
+
+h1 a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(57, 255, 252, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+h1 a:hover::before {
+  left: 100%;
+}
+
 h1 a:hover {
   transform: scale(1.1);
-  border-color: #39FFFC;
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  text-shadow: 0 0 10px rgba(57, 255, 252, 0.5);
 }
+
+h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin: 30px 0 15px 0;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
 ul {
-  list-style-type: disc;
-  list-style-position: outside;
-  margin-left: 50px;
+  list-style-type: none;
+  margin-left: 30px;
   padding-left: 0;
 }
-ul li::marker {
-  content: "· ";
-  font-size: 20px;
-  color: #ffffff;
-}
+
 ul li {
   margin-bottom: 15px;
   font-size: 1rem;
+  position: relative;
+  padding-left: 20px;
+  transition: transform 0.2s ease;
 }
+
+ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+ul li:hover {
+  transform: translateX(5px);
+}
+
+ul li:hover::before {
+  transform: translateX(3px);
+  color: var(--secondary-color);
+}
+
 a {
-  color: #00d1ff;
+  color: var(--primary-color);
   text-decoration: none;
-  border-bottom: 2px solid #00d1ff;
-  padding-bottom: 2px;
-  transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
   display: inline-block;
+  position: relative;
 }
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
 a:hover {
-  transform: scale(1.1);
-  border-color: #39FFFC;
+  color: var(--secondary-color);
+  transform: translateY(-1px);
 }
+
 .quote-rotator {
-  margin: 30px 0;
+  margin: 40px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
-  padding: 10px 15px;
-  border-radius: 8px;
+  background: #111;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 209, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
+
 .quote-rotator p {
-  color: #a0e0ff;
+  color: var(--quote-color);
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0;
   text-align: center;
   flex: 1;
+  line-height: 1.6;
+  font-weight: 300;
 }
+
+.quote-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 15px;
+}
+
 .quote-rotator button {
   background: transparent;
-  color: #00d1ff;
-  border: none;
-  font-size: 1.5rem;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s;
-  margin-left: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .quote-rotator button:hover {
-  transform: scale(1.2);
-  color: #39FFFC;
+  background: var(--primary-color);
+  color: var(--bg-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 209, 255, 0.5);
 }
+
+.category-indicator {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+section {
+  margin: 40px 0;
+  padding: 20px 0;
+}
+
 .contact-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #111;
-  padding: 10px 0;
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
   display: flex;
   justify-content: center;
   gap: 40px;
   z-index: 1000;
+  border-top: 1px solid rgba(0, 209, 255, 0.2);
 }
+
 .contact-bar a {
-  color: #00d1ff;
+  color: var(--primary-color);
   text-decoration: none;
-  border-bottom: 2px solid #00d1ff;
-  padding-bottom: 2px;
-  transition: transform 0.3s ease, border-color 0.3s, color 0.3s;
-  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: 400;
 }
+
+.contact-bar a::after {
+  display: none;
+}
+
 .contact-bar a:hover {
-  transform: scale(1.1);
-  border-color: #39FFFC;
+  background: rgba(0, 209, 255, 0.1);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 209, 255, 0.3);
+}
+
+.typing-animation {
+  animation: typing 0.5s ease-out;
+}
+
+@keyframes typing {
+  0% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .contact-bar {
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .contact-bar a {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  
+  .quote-rotator {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .quote-controls {
+    flex-direction: row;
+    margin-left: 0;
+  }
 }
 </style>
 </head>
@@ -143,98 +328,262 @@ a:hover {
   <div class="banner">
     <img src="https://pbs.twimg.com/profile_images/1956422441569312770/OJe7wx2f_400x400.jpg" alt="profile picture" class="pfp">
   </div>
+  
   <h1>hi, i'm <a href="index.html">haku</a></h1>
+  
   <ul>
     <li>i am a second year student, studying iot and electronics</li>
     <li>preparing for iiith leee ecd. love doing maths.</li>
+    <li>passionate about technology and continuous learning</li>
+    <li>exploring the intersection of hardware and software</li>
   </ul>
+  
   <section class="quote-rotator">
-    <p id="quote"></p>
-    <button id="nextQuoteBtn">→</button>
+    <p id="quote">Loading quotes...</p>
+    <div class="quote-controls">
+      <button id="nextQuoteBtn" title="Next quote">→</button>
+      <button id="categoryBtn" title="Change category">⟲</button>
+    </div>
   </section>
+  <div class="category-indicator" id="categoryIndicator">red dead redemption 2</div>
+  
   <section class="projects">
     <h2>projects</h2>
     <ul>
-      <li><a href="#">python programs</a> : some personal python projects</li>
-      <li><a href="#">small iot projects</a> : basic IoT experiments</li>
-      <li><a href="#">personal website development</a> : building my website</li>
+      <li><a href="#" data-project="python">python programs</a> : some personal python projects and automation scripts</li>
+      <li><a href="#" data-project="iot">small iot projects</a> : basic IoT experiments with sensors and microcontrollers</li>
+      <li><a href="#" data-project="web">personal website development</a> : building and enhancing my web presence</li>
+      <li><a href="#" data-project="electronics">electronics experiments</a> : circuit design and embedded programming</li>
     </ul>
   </section>
+  
   <section class="blog">
     <h2>blog</h2>
     <ul>
-      <li><a href="#">learning logs</a> : miscellaneous notes on coding, electronics, and math</li>
-      <li><a href="#">my notes</a> : study material and summaries</li>
-      <li><a href="#">gym progress updates</a> : my workout tracking</li>
+      <li><a href="#" data-blog="learning">learning logs</a> : miscellaneous notes on coding, electronics, and math</li>
+      <li><a href="#" data-blog="notes">my notes</a> : study material, summaries, and academic insights</li>
+      <li><a href="#" data-blog="fitness">gym progress updates</a> : my workout tracking and fitness journey</li>
+      <li><a href="#" data-blog="tech">tech insights</a> : thoughts on emerging technologies and trends</li>
     </ul>
   </section>
-
-<div class="content-wrapper">
-  <div class="main-container">
-    <!-- your existing main content here -->
-  </div>
-
-  <div class="spotify-container">
-    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2hOhofWriUn8fT94tpzsuw?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>" 
-            width="300" height="600" frameborder="0" allowtransparency="true" allow="encrypted-media">
-    </iframe>
-  </div>
 </div>
 
-
-
-
-
-</div>
 <div class="contact-bar">
   <a href="mailto:dhanrazx@proton.me">email</a>
-  <a href="https://github.com/kyahikahein" target="_blank">github</a>
-  <a href="https://twitter.com/dhanrazx" target="_blank">twitter</a>
+  <a href="https://github.com/kyahikahein" target="_blank" rel="noopener">github</a>
+  <a href="https://twitter.com/dhanrazx" target="_blank" rel="noopener">twitter</a>
+  <a href="#" onclick="copyToClipboard('dhanrazx@proton.me')">copy email</a>
 </div>
-<script>
-const rdr2Quotes = ["Arthur Morgan: 'We can't change what's done, we can only move on.'","Dutch van der Linde: 'We are more ghosts than people.'","Hosea Matthews: 'I wish I'd acquired wisdom at less of a price.'","Micah Bell: 'I don't want to kill you, John.'","John Marston: 'Arthur saved my life, more than once.'"];
-const aotQuotes = ["Eren Yeager: 'If you win, you live. If you lose, you die.'","Mikasa Ackerman: 'In a world full of darkness, you are my only light.'","Levi Ackerman: 'Sometimes you must become a monster to protect those you love.'","Armin Arlert: 'It doesn't matter how hard the past was, you can always start over.'","Eren Yeager: 'We’re born free. All of us, free.'"];
-const vinlandQuotes = ["Thors: 'You have no enemies. No one has enemies.'","Askeladd: 'A man, slave to gold, holds a whip...'","Thorfinn: 'I have no enemies.'","Canute: 'Why is there no love in the hearts of men?'","Thors: 'The future is often forged in the crucible of uncertainty.'"];
-const unknownQuotes = ["Insert your custom quotes here...","Another placeholder quote...","Yet another example quote..."];
 
-let index = 0;
-let category = 0; // 0: RDR2, 1: AOT, 2: Vinland, 3: Unknown
+<script>
+// Enhanced quote system with multiple categories
+const quotes = {
+  rdr2: [
+    "Arthur Morgan: 'We can't change what's done, we can only move on.'",
+    "Dutch van der Linde: 'We are more ghosts than people.'",
+    "Hosea Matthews: 'I wish I'd acquired wisdom at less of a price.'",
+    "John Marston: 'Arthur saved my life, more than once.'",
+    "Sadie Adler: 'I ain't got nothing left to lose.'",
+    "Charles Smith: 'Sometimes silence is better than words.'",
+    "Arthur Morgan: 'Be loyal to what matters.'"
+  ],
+  aot: [
+    "Eren Yeager: 'If you win, you live. If you lose, you die.'",
+    "Mikasa Ackerman: 'In a world full of darkness, you are my only light.'",
+    "Levi Ackerman: 'Sometimes you must become a monster to protect those you love.'",
+    "Armin Arlert: 'It doesn't matter how hard the past was, you can always start over.'",
+    "Eren Yeager: 'We're born free. All of us, free.'",
+    "Erwin Smith: 'My soldiers, rage! My soldiers, scream! My soldiers, fight!'",
+    "Hange Zoë: 'The future belongs to those who dare to dream.'"
+  ],
+  vinland: [
+    "Thors: 'You have no enemies. No one has enemies.'",
+    "Askeladd: 'A man, slave to gold, holds a whip...'",
+    "Thorfinn: 'I have no enemies.'",
+    "Canute: 'Why is there no love in the hearts of men?'",
+    "Thors: 'The future is often forged in the crucible of uncertainty.'",
+    "Thorfinn: 'I want to build a place where everyone can live in peace.'",
+    "Askeladd: 'A true warrior needs no sword.'"
+  ],
+  motivational: [
+    "The only way to do great work is to love what you do.",
+    "Code is like humor. When you have to explain it, it's bad.",
+    "Learning never exhausts the mind. - Leonardo da Vinci",
+    "The best time to plant a tree was 20 years ago. The second best time is now.",
+    "Innovation distinguishes between a leader and a follower.",
+    "The only impossible journey is the one you never begin.",
+    "Success is not final, failure is not fatal: it is the courage to continue that counts."
+  ]
+};
+
+const categoryNames = ['red dead redemption 2', 'attack on titan', 'vinland saga', 'motivational'];
+const categoryKeys = ['rdr2', 'aot', 'vinland', 'motivational'];
+
+let currentCategory = 0;
+let currentIndex = 0;
+let isAnimating = false;
+
 const quoteEl = document.getElementById('quote');
 const nextBtn = document.getElementById('nextQuoteBtn');
+const categoryBtn = document.getElementById('categoryBtn');
+const categoryIndicator = document.getElementById('categoryIndicator');
 
-function playClickSound() {
-  const audio = new Audio('https://www.soundjay.com/button/beep-07.mp3');
-  audio.play();
+// Initialize quote system
+function initQuotes() {
+  showQuote();
+  startAutoRotation();
 }
 
 function showQuote() {
-  let quotes;
-  if(category === 0) quotes = rdr2Quotes;
-  else if(category === 1) quotes = aotQuotes;
-  else if(category === 2) quotes = vinlandQuotes;
-  else quotes = unknownQuotes;
+  if (isAnimating) return;
   
-  quoteEl.textContent = quotes[index % quotes.length];
+  isAnimating = true;
+  const currentCategoryKey = categoryKeys[currentCategory];
+  const currentQuotes = quotes[currentCategoryKey];
+  
+  // Add typing animation
+  quoteEl.classList.add('typing-animation');
+  quoteEl.textContent = currentQuotes[currentIndex];
+  categoryIndicator.textContent = categoryNames[currentCategory];
+  
+  setTimeout(() => {
+    isAnimating = false;
+    quoteEl.classList.remove('typing-animation');
+  }, 500);
 }
 
-nextBtn.addEventListener('click', () => {
-  playClickSound();
-  index++;
-  let currentQuotes;
-  if(category === 0) currentQuotes = rdr2Quotes;
-  else if(category === 1) currentQuotes = aotQuotes;
-  else if(category === 2) currentQuotes = vinlandQuotes;
-  else currentQuotes = unknownQuotes;
-  
-  if(index >= currentQuotes.length) {
-    index = 0;
-    category = (category + 1) % 4; // cycle categories
-  }
-  
+function nextQuote() {
+  const currentCategoryKey = categoryKeys[currentCategory];
+  const currentQuotes = quotes[currentCategoryKey];
+  currentIndex = (currentIndex + 1) % currentQuotes.length;
   showQuote();
+}
+
+function nextCategory() {
+  currentCategory = (currentCategory + 1) % categoryKeys.length;
+  currentIndex = 0;
+  showQuote();
+}
+
+// Auto-rotation functionality
+let autoRotationInterval;
+function startAutoRotation() {
+  autoRotationInterval = setInterval(() => {
+    nextQuote();
+  }, 5000); // Change quote every 5 seconds
+}
+
+function resetAutoRotation() {
+  clearInterval(autoRotationInterval);
+  startAutoRotation();
+}
+
+// Event listeners
+nextBtn.addEventListener('click', () => {
+  nextQuote();
+  resetAutoRotation();
 });
 
-showQuote();
+categoryBtn.addEventListener('click', () => {
+  nextCategory();
+  resetAutoRotation();
+});
+
+// Email copy functionality
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    // Create temporary notification
+    const notification = document.createElement('div');
+    notification.textContent = 'Email copied to clipboard!';
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #00d1ff, #39FFFC);
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.9rem;
+      z-index: 10000;
+      animation: slideIn 0.3s ease-out;
+    `;
+    
+    document.body.appendChild(notification);
+    setTimeout(() => {
+      notification.remove();
+    }, 3000);
+  }).catch(() => {
+    console.log('Failed to copy email to clipboard');
+  });
+}
+
+// Add slide-in animation for notification
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// Enhanced link interactions
+document.addEventListener('DOMContentLoaded', () => {
+  // Add click effects to project and blog links
+  const projectLinks = document.querySelectorAll('[data-project], [data-blog]');
+  projectLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const type = link.dataset.project || link.dataset.blog;
+      console.log(`Clicked on ${type} - implement navigation logic here`);
+      
+      // Add visual feedback
+      link.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        link.style.transform = '';
+      }, 150);
+    });
+  });
+});
+
+// Pause auto-rotation when user hovers over quote area
+const quoteRotator = document.querySelector('.quote-rotator');
+quoteRotator.addEventListener('mouseenter', () => {
+  clearInterval(autoRotationInterval);
+});
+
+quoteRotator.addEventListener('mouseleave', () => {
+  startAutoRotation();
+});
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', initQuotes);
+
+// Add keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  
+  switch(e.key) {
+    case 'ArrowRight':
+    case ' ':
+      e.preventDefault();
+      nextQuote();
+      resetAutoRotation();
+      break;
+    case 'ArrowDown':
+      e.preventDefault();
+      nextCategory();
+      resetAutoRotation();
+      break;
+  }
+});
 </script>
 </body>
 </html>
