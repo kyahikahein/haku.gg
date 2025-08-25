@@ -115,7 +115,8 @@ h1 a {
 
 h1 a:hover {
   transform: scale(1.1);
-  border-color: #39FFFC;
+  border-color: #39fffc;
+  color: #39fffc;
 }
 
 /* Lists */
@@ -137,6 +138,7 @@ ul li {
   font-size: 1rem;
 }
 
+/* General Links */
 a {
   color: #00d1ff;
   text-decoration: none;
@@ -148,7 +150,8 @@ a {
 
 a:hover {
   transform: scale(1.1);
-  border-color: #39FFFC;
+  border-color: #39fffc;
+  color: #39fffc;
 }
 
 /* Projects & Blog Headings */
@@ -181,7 +184,8 @@ a:hover {
 
 .contact-bar a:hover {
   transform: scale(1.1);
-  border-color: #39FFFC;
+  border-color: #39fffc;
+  color: #39fffc;
 }
 
 /* Light Theme */
@@ -192,8 +196,18 @@ body.light-theme {
 
 body.light-theme a,
 body.light-theme h1 a,
-body.light-theme .theme-switcher span {
+body.light-theme .theme-switcher span,
+body.light-theme .projects h2,
+body.light-theme .blog h2 {
   color: #0077cc;
+  border-color: #0077cc;
+}
+
+body.light-theme a:hover,
+body.light-theme h1 a:hover,
+body.light-theme .contact-bar a:hover {
+  color: #0099ff;
+  border-color: #0099ff;
 }
 
 body.light-theme .contact-bar {
@@ -205,6 +219,10 @@ body.light-theme .contact-bar a {
   border-bottom: 2px solid #0077cc;
 }
 
+body.light-theme ul li::marker {
+  color: #111;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .main-container {
@@ -212,4 +230,3 @@ body.light-theme .contact-bar a {
     margin: 20px auto;
   }
 }
-
