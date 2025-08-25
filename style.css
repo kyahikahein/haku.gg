@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   transition: background-color 0.3s, color 0.3s;
-  padding-bottom: 80px; /* Space for footer */
+  padding-bottom: 60px; /* Space for contact bar only */
 }
 
 /* Main Container */
@@ -341,17 +341,12 @@ body.light-theme ul li::marker {
 
 /* Footer */
 .footer {
-  position: fixed;
-  bottom: 50px;
-  left: 0;
-  right: 0;
-  width: 100%;
   text-align: center;
-  padding: 10px 0;
+  padding: 20px 0;
+  margin-top: 40px;
   font-size: 0.8rem;
   color: #666;
   background-color: transparent;
-  z-index: 999;
 }
 
 body.light-theme .footer {
