@@ -10,24 +10,11 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Left Sidebar */
-.left-sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 100vh;
-  background: linear-gradient(180deg, #111, #222);
-  z-index: 1;
-  transition: background 0.3s;
-}
-
 /* Main Container */
 .main-container {
   width: 700px;
   margin: 20px;
   line-height: 1.8;
-  z-index: 2;
 }
 
 /* Banner & Profile Picture */
@@ -49,12 +36,13 @@ body {
   left: 20px;
 }
 
-/* Theme Switcher */
+/* Theme Switcher on right */
 .theme-switcher {
-  margin-top: 20px;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .theme-switcher span {
@@ -202,10 +190,6 @@ body.light-theme {
   color: #111;
 }
 
-body.light-theme .left-sidebar {
-  background: linear-gradient(180deg, #ccc, #eee);
-}
-
 body.light-theme a,
 body.light-theme h1 a,
 body.light-theme .theme-switcher span {
@@ -227,9 +211,4 @@ body.light-theme .contact-bar a {
     width: 90%;
     margin: 20px auto;
   }
-
-  .left-sidebar {
-    display: none;
-  }
 }
-
