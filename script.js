@@ -152,3 +152,4 @@ window.addEventListener('load', () => {
     typingEffect = new TypingEffect();
     addSoundEffects();
 });
+
