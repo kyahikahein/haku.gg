@@ -3,33 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haku</title>
+  <title>haku's site</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Source Code Pro', monospace;
+      text-transform: lowercase;
+      margin: 20px;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    h1, h2, p, ul {
+      text-align: left;
+    }
+    ul {
+      list-style-type: disc;
+      list-style-position: outside;
+      margin-left: 20px;
+    }
+    ul li::marker {
+      content: "· ";
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>hi, i'm haku</h1>
-    <p class="bio">IoT + M.Tech student · learning mathematics and electronics · Trying for IIITH LEEE.</p>
 
-    <h2>hobbies</h2>
-    <ul>
-      <li>gym & fitness</li>
-      <li>watching anime </li>
-      <li>into electronics</li>
-      <li>learning mathematics</li>
-    </ul>
+    <section class="bio">
+      <h2>bio</h2>
+      <ul>
+        <li>i am a second year student, studying of iot and electronics</li>
+        <li> preparing for iiith leee ecd. i'm not so good at it but love doin maths.</li>
+      </ul>
+    </section>
 
-    <h2>projects</h2>
-    <ul>
-      <li>iot automation setups</li>
-      <li>python learning journey</li>
-      <li>personal website</li>
-    </ul>
+    <section class="experience">
+      <h2>experience</h2>
+      <ul>
+        <li>python (beginner, intermediate projects ongoing)</li>
+        <li>electronics, digital computer organization, and math </li>
+        <li>gym training (from scratch, tracking progress)</li>
+      </ul>
+    </section>
 
-    <h2>Contact</h2>
-    <p>Twitter: <a href="#">@kyaahikahein</a></p>
-    <p>GitHub: <a href="#">github.com/kyahikahein</a></p>
-    <p>Email: <a href="dhanrazx@proton.me">email</a></p>
+    <section class="projects">
+      <h2>projects</h2>
+      <ul>
+        <li><a href="#">intermediate python programs</a></li>
+        <li><a href="#">small iot projects</a></li>
+        <li><a href="#">personal website development</a></li>
+      </ul>
+    </section>
+
+    <section class="blog">
+      <h2>blog</h2>
+      <ul>
+        <li><a href="#">gym progress updates</a></li>
+        <li><a href="#">my notes</a></li>
+        <li><a href="#">tech experiments insights</a></li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h2>contact</h2>
+      <ul>
+        <li><a href="mailto:dhanrazx@proton.me">email</a></li>
+        <li><a href="https://github.com/kyahikahein" target="_blank">github</a></li>
+        <li><a href="https://twitter.com/dhanrazx" target="_blank">twitter</a></li>
+      </ul>
+    </section>
   </div>
 </body>
 </html>
