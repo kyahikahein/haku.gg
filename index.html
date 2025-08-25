@@ -22,7 +22,7 @@
       width: 700px;
       margin-top: 20px;
       position: relative;
-      line-height: 1.8; /* better spacing */
+      line-height: 1.8;
     }
 
     /* Banner */
@@ -54,8 +54,15 @@
     }
 
     h1 a {
-      color: #06A0F0; /* readable color */
-      text-decoration: underline; /* always underline */
+      color: #39FFFC; /* dark-mode friendly */
+      text-decoration: none;
+      border-bottom: 2px solid #39FFFC; /* subtle underline */
+      padding-bottom: 2px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    h1 a:hover {
+      border-color: #0CF; /* hover highlight */
     }
 
     h2 {
@@ -68,14 +75,14 @@
     ul {
       list-style-type: disc;
       list-style-position: outside;
-      margin-left: 50px; /* shifted for alignment */
+      margin-left: 50px;
       padding-left: 0;
     }
 
     ul li::marker {
       content: "· ";
       font-size: 20px;
-      color: #06A0F0; /* marker color for contrast */
+      color: #39FFFC; /* match link color */
     }
 
     ul li {
@@ -85,8 +92,15 @@
 
     /* Links */
     a {
-      color: #06A0F0; /* always readable */
-      text-decoration: underline; /* always underline */
+      color: #39FFFC; /* always readable on dark mode */
+      text-decoration: none;
+      border-bottom: 2px solid #39FFFC;
+      padding-bottom: 2px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    a:hover {
+      border-color: #0CF; /* subtle hover effect */
     }
 
     /* Contact Bar */
@@ -145,9 +159,4 @@
   </div>
 
   <div class="contact-bar">
-    <a href="mailto:dhanrazx@proton.me">email</a>
-    <a href="https://github.com/kyahikahein" target="_blank">github</a>
-    <a href="https://twitter.com/dhanrazx" target="_blank">twitter</a>
-  </div>
-</body>
-</html>
+    <a href="mailto:dha
