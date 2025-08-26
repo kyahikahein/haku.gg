@@ -1085,3 +1085,146 @@ body.light-theme a:hover, body.light-theme h1 a:hover, body.light-theme .contact
 .top-nav a:hover::after, .top-nav a:focus-visible::after { opacity: 1; transform: scale(1); }
 .top-nav a::before { content: "" !important; position: absolute; top: -20%; left: -30%; width: 60%; height: 140%; background: linear-gradient(120deg, rgba(255,255,255,0), rgba(255,255,255,0.18), rgba(255,255,255,0)); transform: skewX(-20deg) translateX(-120%); border-radius: inherit; filter: blur(4px); opacity: 0; pointer-events: none; }
 .top-nav a:hover::before, .top-nav a:focus-visible::before { opacity: 1; animation: sheenSweep 800ms ease-out forwards; }
+
+
+/* ... existing code ... */
+
+/* Responsive Design - Mobile First Approach */
+@media (max-width: 768px) {
+  /* Reset page layout for mobile */
+  .page {
+    display: block;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  /* Make main container full width on mobile */
+  .main-container {
+    width: 95%;
+    margin: 15px auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Hide sidebar on mobile - it was causing hover issues */
+  .sidebar {
+    display: none;
+  }
+  
+  /* Adjust theme switcher for mobile */
+  .theme-switcher {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    padding: 4px 6px;
+    gap: 6px;
+    z-index: 1200;
+  }
+  
+  /* Stack header elements vertically on mobile */
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  
+  .header-row h1 {
+    margin-bottom: 6px;
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+  
+  .top-nav {
+    align-self: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  /* Adjust content shift for mobile */
+  :root {
+    --content-shift: 0px;
+  }
+  
+  /* Footer centering fix for mobile */
+  .footer {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  .main-container {
+    width: 98%;
+    margin: 10px auto;
+  }
+  
+  .theme-switcher {
+    top: 6px;
+    right: 6px;
+    padding: 3px 5px;
+    gap: 4px;
+  }
+  
+  .theme-switcher span {
+    font-size: 0.75rem;
+  }
+  
+  .top-nav {
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .top-nav a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+  
+  /* Reduce heading size further on very small screens */
+  h1 {
+    font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+  }
+  
+  /* Adjust skill categories for mobile */
+  .skill-category {
+    margin-left: 8px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .skill-category h3 {
+    width: auto;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+  
+  .skills-grid {
+    gap: 6px;
+  }
+  
+  .skill-item {
+    padding: 3px 6px;
+    font-size: 0.75rem;
+  }
+  
+  /* Contact bar adjustments */
+  .contact-bar {
+    gap: 12px;
+    padding: 8px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .contact-bar a {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}
+
+/* Ensure sidebar is hidden on all mobile devices */
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}
