@@ -5,17 +5,18 @@ scrollbar-gutter: stable both-edges;
 }
 
 body {
-margin: 0;
-padding: 0;
-font-family: 'Courier Prime', 'Courier New', Courier, monospace;
-font-size: 16px;
-background-color: #0a0a0a; /* softened black */
-color: #f1f1f1;
-display: flex;
-justify-content: center;
-transition: background-color 0.3s, color 0.3s;
-padding-bottom: 60px; /* Space for contact bar only */
+  margin: 0;
+  padding: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  background-color: #0a0a0a; /* softened black */
+  color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+  padding-bottom: 60px; /* Space for contact bar only */
 }
+
 
 /* Layout shift variable (approx 1.5 inches = 144px) */
 :root {
