@@ -27,6 +27,29 @@ if (themeToggle) {
       body.classList.remove('light-theme');
       localStorage.setItem('theme', 'dark');
     }
-    window.setTimeout(() => body.classList.remove('theme-transition'), 280);
+    window.setTimeout(() => body.classList.remove('theme-transition'), 480);
   });
 }
+
+// Typing effect for first visit or reload
+(function() {
+  const nameEl = document.getElementById('typedName');
+  if (!nameEl) return;
+  const key = 'typedName-played';
+  const hasPlayed = sessionStorage.getItem(key);
+  if (hasPlayed) return;
+  const fullText = nameEl.textContent;
+  nameEl.textContent = '';
+  let idx = 0;
+  const typeSpeedMs = 100;
+  const typer = () => {
+    if (idx <= fullText.length) {
+      nameEl.textContent = fullText.slice(0, idx);
+      idx += 1;
+      window.setTimeout(typer, typeSpeedMs);
+    } else {
+      sessionStorage.setItem(key, '1');
+    }
+  };
+  typer();
+})();
