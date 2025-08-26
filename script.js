@@ -2,22 +2,29 @@
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 
-// Check for saved theme preference or default to dark
-const currentTheme = localStorage.getItem('theme') || 'dark';
+// Determine initial theme: saved preference or system preference
+const savedTheme = localStorage.getItem('theme');
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
 
-// Apply saved theme
-if (currentTheme === 'light') {
+// Apply initial theme and toggle state
+if (initialTheme === 'light') {
   body.classList.add('light-theme');
-  themeToggle.checked = true;
+  if (themeToggle) themeToggle.checked = true;
+} else {
+  body.classList.remove('light-theme');
+  if (themeToggle) themeToggle.checked = false;
 }
 
 // Toggle theme on checkbox change
-themeToggle.addEventListener('change', function() {
-  if (this.checked) {
-    body.classList.add('light-theme');
-    localStorage.setItem('theme', 'light');
-  } else {
-    body.classList.remove('light-theme');
-    localStorage.setItem('theme', 'dark');
-  }
-});
+if (themeToggle) {
+  themeToggle.addEventListener('change', function() {
+    if (this.checked) {
+      body.classList.add('light-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.classList.remove('light-theme');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+}
