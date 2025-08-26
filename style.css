@@ -45,7 +45,7 @@ left: 20px;
 .banner-nav {
 position: absolute;
 right: 16px;
-bottom: -14px;
+bottom: 8px;
 display: flex;
 gap: 18px;
 background: rgba(0, 0, 0, 0.5);
@@ -524,7 +524,7 @@ height: 110px;
 
 .banner-nav {
 right: 12px;
-bottom: -12px;
+bottom: 8px;
 gap: 14px;
 padding: 5px 8px;
 }
@@ -614,9 +614,8 @@ margin-bottom: 15px;
 
 .banner-nav {
 right: 10px;
-bottom: -10px;
+bottom: 6px;
 gap: 12px;
 padding: 4px 6px;
 }
 }
-
