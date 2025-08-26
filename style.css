@@ -9,7 +9,7 @@ body {
   padding: 0;
   font-family: 'JetBrains Mono', monospace;
   font-size: 16px;
-  background-color: #000000; /* pure black */
+  background-color: #0a0a0a; /* very dark gray instead of pure black */
   color: #ffffff; /* pure white */
   display: flex;
   justify-content: center;
@@ -50,7 +50,7 @@ body {
   padding: 6px 8px;
   border-radius: 12px;
   backdrop-filter: blur(6px);
-  background: rgba(0,0,0,0.8);
+  background: rgba(10,10,10,0.8);
   border: 1px solid rgba(255,255,255,0.2);
   z-index: 1200;
 }
@@ -81,7 +81,7 @@ body {
   font-family: 'JetBrains Mono', monospace;
   border: 1px solid #ffffff;
   border-radius: 8px;
-  background-color: #000000;
+  background-color: #0a0a0a;
   padding: 8px 14px;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -300,7 +300,7 @@ a:hover {
   align-items: center;
   gap: 4px;
   padding: 4px 8px;
-  background-color: #000000;
+  background-color: #0a0a0a;
   border-radius: 4px;
   border: 1px solid #ffffff;
   transition: background-color 0.2s, color 0.2s;
@@ -365,7 +365,7 @@ a:hover {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #000000;
+  background-color: #0a0a0a;
   padding: 10px 0;
   display: flex;
   justify-content: center;
@@ -422,6 +422,7 @@ body.light-theme .top-nav a {
   background-color: #f5e6d3;
   color: #000000;
   border-color: #000000;
+  text-decoration: underline;
 }
 
 body.light-theme .top-nav a:hover,
@@ -429,6 +430,7 @@ body.light-theme .top-nav a:focus-visible {
   background-color: #000000;
   color: #f5e6d3;
   border-color: #f5e6d3;
+  text-shadow: 0 0 8px rgba(245, 230, 211, 0.8), 0 0 16px rgba(245, 230, 211, 0.6);
 }
 
 /* Light theme headings and links */
@@ -574,7 +576,7 @@ body.light-theme .footer {
 }
 
 .sb-block {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
