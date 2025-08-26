@@ -278,6 +278,9 @@ body:not(.light-theme).theme-transition::after {
 }
 
 /* Headings */
+/* ... existing code ... */
+
+/* Headings */
 h1 {
 font-size: 1.8rem;
 text-transform: lowercase;
@@ -285,6 +288,8 @@ line-height: 1.15;
 margin-top: 10px;
 font-family: inherit;
 }
+
+/* ... existing code ... */
 
 h1 a {
 color: #00d1ff;
