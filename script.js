@@ -19,6 +19,7 @@ if (initialTheme === 'light') {
 // Toggle theme on checkbox change
 if (themeToggle) {
   themeToggle.addEventListener('change', function() {
+    body.classList.add('theme-transition');
     if (this.checked) {
       body.classList.add('light-theme');
       localStorage.setItem('theme', 'light');
@@ -26,5 +27,6 @@ if (themeToggle) {
       body.classList.remove('light-theme');
       localStorage.setItem('theme', 'dark');
     }
+    window.setTimeout(() => body.classList.remove('theme-transition'), 280);
   });
 }
