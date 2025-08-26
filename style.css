@@ -41,6 +41,41 @@ top: 60px;
 left: 20px;
 }
 
+/* Banner Nav overlay (right side, slightly below bottom edge) */
+.banner-nav {
+position: absolute;
+right: 16px;
+bottom: -14px;
+display: flex;
+gap: 18px;
+background: rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(4px);
+padding: 6px 10px;
+border-radius: 10px;
+border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.banner-nav a {
+font-size: 0.95rem;
+border-bottom: none;
+padding-bottom: 0;
+opacity: 0.95;
+}
+
+.banner-nav a:hover,
+.banner-nav a:focus-visible {
+opacity: 1;
+border-bottom: 2px solid currentColor;
+transform: none;
+outline: none;
+}
+
+/* Light theme variant for banner nav */
+body.light-theme .banner-nav {
+background: rgba(255, 255, 255, 0.7);
+border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 /* Theme Switcher on right */
 .theme-switcher {
 display: flex;
@@ -486,6 +521,13 @@ left: 10px;
 .banner {
 height: 110px;
 }
+
+.banner-nav {
+right: 12px;
+bottom: -12px;
+gap: 14px;
+padding: 5px 8px;
+}
 }
 
 @media (max-width: 480px) {
@@ -568,6 +610,13 @@ left: 8px;
 .banner {
 height: 90px;
 margin-bottom: 15px;
+}
+
+.banner-nav {
+right: 10px;
+bottom: -10px;
+gap: 12px;
+padding: 4px 6px;
 }
 }
 
