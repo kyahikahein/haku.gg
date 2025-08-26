@@ -176,35 +176,29 @@ text-transform: lowercase;
 .skill-category {
 margin-bottom: 15px;
 margin-left: 50px;
-display: block;
+display: flex;
+align-items: flex-start;
+gap: 0;
 }
 
 .skill-category h3 {
 color: #00d1ff;
 font-size: 1.2rem;
-margin-bottom: 8px;
-margin-left: 0;
-margin-right: 0;
+margin: 0;
 text-transform: lowercase;
 font-weight: normal;
 opacity: 0.8;
-display: inline-block;
-vertical-align: top;
-width: 220px;
+width: 200px;
+flex-shrink: 0;
+line-height: 1.4;
 }
 
 .skills-grid {
-display: inline-block;
-vertical-align: top;
+display: flex;
+flex-wrap: wrap;
 gap: 15px;
-margin-left: 0;
-}
-
-.skills-grid .skill-item {
-display: inline-block;
-margin-right: 15px;
-margin-bottom: 8px;
-vertical-align: top;
+margin: 0;
+align-items: center;
 }
 
 .skill-item {
@@ -215,6 +209,7 @@ padding: 6px 10px;
 background-color: #1a1a1a;
 border-radius: 6px;
 transition: background-color 0.3s, transform 0.3s;
+margin: 0;
 }
 
 .skill-item:hover {
