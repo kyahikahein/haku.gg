@@ -282,7 +282,7 @@ body:not(.light-theme).theme-transition::after {
 
 /* Headings */
 h1 {
-font-size: 1.8rem;
+font-size: 1.3rem;
 text-transform: lowercase;
 line-height: 1.15;
 margin-top: 10px;
