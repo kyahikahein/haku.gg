@@ -883,3 +883,21 @@ body, .sb-block, .skill-item, .top-nav a, a, .contact-bar a, .theme-switcher {
     scroll-behavior: auto !important;
   }
 }
+
+.back-button {
+  position: fixed;       /* stay in top-left even when scrolling */
+  top: 20px;             /* adjust vertical distance */
+  left: 20px;            /* distance from left edge */
+  z-index: 1000;         /* on top of everything else */
+  background-color: #222; /* optional: matches your theme */
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  background-color: #444; /* subtle hover effect */
+}
