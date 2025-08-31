@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haku — Projects</title>
+<title>haku's projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="https://pbs.twimg.com/profile_images/1956422441569312770/OJe7wx2f_400x400.jpg">
 </head>
@@ -11,70 +14,79 @@
 <div class="page">
   <div class="main-container">
 
-    <!-- Back Button -->
-    <button class="back-button" onclick="window.history.back()">←</button>
+    <a href="index.html" class="back-button">← back</a>
 
-
-
-    <!-- Header -->
     <div class="header-row">
-      <h1>Projects</h1>
+      <h1>projects</h1>
       <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="blog.html">Blog</a>
-        <a href="index.html#skills">Skills</a>
-
+        <a href="index.html" class="nav-link">home</a>
+        <a href="blog.html" class="nav-link">blog</a>
+        <a href="index.html#skills" class="nav-link">skills</a>
+        <a href="#" class="nav-link" id="aboutBtn">about</a>
+        <a href="#" class="nav-link" id="contactBtn">contact</a>
       </nav>
     </div>
 
-    <!-- Theme Toggle -->
-    <div class="theme-switcher">
-      <span class="theme-icon sun">☀️</span>
-      <label class="switch" for="themeToggle">
-        <input type="checkbox" id="themeToggle">
-        <span class="slider round"></span>
-      </label>
-      <span class="theme-icon moon">🌙</span>
+    <div class="theme-hint">
+      click cat to switch theme
     </div>
 
-    <ul>
-     <li><a href="python.html">python</a> : contain python programs and projects</li>
-        <li><a href="projects-serious.html">solo projects</a> : some serious solo projects</li>
-        <li><a href="fun-projects.html">fun projects</a> : project i made out of my boredom</li>
-    </ul>
+    <div class="kiki-cat" id="kikiCat" title="click me to change theme!">
+      <div class="cat-container">
+        <div class="cat-head">
+          <div class="cat-ears">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+          </div>
+          <div class="cat-eyes">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+          </div>
+          <div class="cat-nose"></div>
+          <div class="cat-mouth"></div>
+          <div class="whiskers">
+            <div class="whisker left-1"></div>
+            <div class="whisker left-2"></div>
+            <div class="whisker right-1"></div>
+            <div class="whisker right-2"></div>
+          </div>
+        </div>
+        <div class="cat-body-main">
+          <div class="cat-paw" id="catPaw">🐾</div>
+          <div class="cat-tail"></div>
+        </div>
+        <div class="cat-speech" id="catSpeech">click me to change theme!</div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2>all projects</h2>
+      <div class="section-content">
+        <div class="section-item">
+          <a href="python.html">python</a> : contain python programs and projects
+        </div>
+        <div class="section-item">
+          <a href="projects-serious.html">solo projects</a> : some serious solo projects
+        </div>
+        <div class="section-item">
+          <a href="fun-projects.html">fun projects</a> : project i made out of my boredom
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>made with ❤️ by haku © 2025</p>
+    </div>
 
   </div>
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <section class="sb-block quick">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <a href="index.html#skills">Skills</a>
-
-      </ul>
-    </section>
-    <section class="sb-block contact">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:dhanrazx@proton.me">Email</a></li>
-        <li><a href="https://twitter.com/dhanrazx" target="_blank">Twitter</a></li>
-      </ul>
-    </section>
-  </aside>
-
 </div>
 
 <div class="contact-bar">
-  <a href="mailto:dhanrazx@proton.me">Email</a>
-  <a href="https://github.com/kyahikahein" target="_blank">GitHub</a>
-  <a href="https://twitter.com/dhanrazx" target="_blank">Twitter</a>
+  <a href="mailto:dhanrazx@proton.me">email</a>
+  <a href="https://github.com/kyahikahein" target="_blank">github</a>
+  <a href="https://x.com/dhanrazx" target="_blank">x</a>
 </div>
 
-<script src="script.js" defer></script>
+<script src="script.js"></script>
 </body>
 </html>
-
