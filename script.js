@@ -130,16 +130,21 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="profile-section">
           <img src="https://pbs.twimg.com/profile_images/1961017381423386625/9m6XriRP_400x400.jpg" alt="Profile" class="profile-image">
           <div class="profile-info">
-            <h3 class="haku-text">haku 葉子林</h3>
-            <p class="profile-subtitle">student, iot & electronics enthusiast</p>
+            <h3 class="haku-text">haku</h3>
+            <p class="profile-subtitle"> IoT (Embedded Systems) Dual Degree Student
+
+
+</p>
           </div>
         </div>
         <div class="about-content">
-          <p>hi! i'm haku, a student and developer passionate about creating iot solutions and building web applications.</p>
-          <p>currently learning iot, electronics, and preparing for competitive exams. love doing maths and building cool projects in my free time!</p>
-          <p>always excited to connect with fellow developers and learners.</p>
-          <p>when i'm not coding, you can find me solving math problems, working out, or experimenting with new electronics projects. i believe in continuous learning and love sharing knowledge with others.</p>
-          <p>feel free to reach out if you'd like to collaborate on projects or just chat about technology, math, or anything interesting!</p>
+          <p>hi, i’m <strong>haku</strong>. right now i’m studying a b.tech + m.tech dual degree in iot, a 5-year course that mixes electronics, communication, and a bit of computer science.</p>
+
+    <p>my days are usually packed with classes like probability, digital computer organization, and measurement science — and on the side, i’m preparing for the iiith leee exam (ecd track) to dive deeper into core electronics and communication.</p>
+
+    <p>i’m also learning python and trying to connect the dots between coding and hardware. this site is part <em>portfolio</em>, part <em>personal blog</em> — a place where i put down projects i’m working on, ideas i’m exploring, and sometimes just random thoughts that i don’t want to lose.</p>
+
+    <p>outside studies, you’ll most likely find me at the gym or playin games. i don’t claim to have everything figured out yet, but i’m learning, experimenting, and building as i go. this space is basically my way of sharing that journey.</p>
         </div>
       </div>
     `;
