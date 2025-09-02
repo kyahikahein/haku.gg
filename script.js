@@ -139,9 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="about-content">
           <p>hi, i’m <strong>haku</strong>. right now i’m studying a b.tech + m.tech dual degree in iot, a 5-year course that mixes electronics, communication, and a bit of computer science.</p>
-
-    <p>my days are usually packed with classes like probability, digital computer organization, and measurement science — and on the side, i’m preparing for the iiith leee exam (ecd track) to dive deeper into core electronics and communication.</p>
-
     <p>i’m also learning python and trying to connect the dots between coding and hardware. this site is part <em>portfolio</em>, part <em>personal blog</em> — a place where i put down projects i’m working on, ideas i’m exploring, and sometimes just random thoughts that i don’t want to lose.</p>
 
     <p>outside studies, you’ll most likely find me at the gym or playin games. i don’t claim to have everything figured out yet, but i’m learning, experimenting, and building as i go. this space is basically my way of sharing that journey.</p>
