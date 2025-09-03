@@ -41,15 +41,15 @@ body.dark-theme {
   --text-color: #FFFFFF;
   --primary-accent: #FFFFFF;
   --secondary-accent: #000000;
-  --border-color: #FFFFFF;
-  --nav-bg: #FFFFFF;
-  --nav-text: #000000;
-  --nav-hover-bg: #CCCCCC;
-  --nav-hover-text: #000000;
+  --border-color: #333333;
+  --nav-bg: #222222;
+  --nav-text: #FFFFFF;
+  --nav-hover-bg: #333333;
+  --nav-hover-text: #FFAC1C;
   --surface-color: rgba(255, 255, 255, 0.05);
-  --contact-bg: #FFFFFF;
-  --contact-hover: #CCCCCC;
-  --shadow-color: rgba(255, 255, 255, 0.1);
+  --contact-bg: #222222;
+  --contact-hover: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.8);
 }
 
 /* --- PERFORMANCE OPTIMIZATIONS --- */
